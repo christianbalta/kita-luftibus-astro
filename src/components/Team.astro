@@ -1,0 +1,44 @@
+---
+import TeamCard from './TeamCard.astro';
+
+const teamMembers = [
+  {
+    name: 'Sandra',
+    role: 'Kita-Leitung',
+    description: 'Erzieherin seit 2008, spezialisiert auf skandinavische Pädagogik',
+    image: '/images/team-sandra.jpg',
+    gradient: 'from-[#F39F5F] to-[#70A6B1]'
+  },
+  {
+    name: 'Sabrina',
+    role: 'Gruppenleiterin',
+    description: 'Kindheitspädagogin mit Fokus auf Naturpädagogik',
+    image: '/images/team-sabrina.jpg',
+    gradient: 'from-[#70A6B1] to-[#F5C748]'
+  },
+  {
+    name: 'Francesca',
+    role: 'Erzieherin',
+    description: 'Mehrsprachige Betreuung und kreative Förderung',
+    image: '/images/team-francesca.jpg',
+    gradient: 'from-[#F5C748] to-[#F39F5F]'
+  }
+];
+---
+
+<section id="team" class="py-20 lg:py-32 bg-background-light-blue">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-4">
+        Team Luftibus
+      </h2>
+      <p class="text-text-gray text-lg max-w-2xl mx-auto">
+        Unser engagiertes Team aus erfahrenen Pädagoginnen begleitet Ihr Kind liebevoll durch den Kita-Alltag.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {teamMembers.map(member => <TeamCard {...member} />)}
+    </div>
+  </div>
+</section>

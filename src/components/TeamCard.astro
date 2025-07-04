@@ -1,0 +1,21 @@
+---
+export interface Props {
+  name: string;
+  role: string;
+  description: string;
+  image: string;
+  gradient: string;
+}
+
+const { name, role, description, image, gradient } = Astro.props;
+---
+
+<div class="team-card bg-white rounded-xl p-8 text-center shadow-default transform transition-transform duration-300 hover:-translate-y-2">
+  <div class="relative mb-6">
+    <img src={image} alt={name} class="w-32 h-32 rounded-full mx-auto object-cover" />
+    <div class={`absolute inset-0 w-32 h-32 mx-auto rounded-full bg-gradient-to-br ${gradient} opacity-10`}></div>
+  </div>
+  <h3 class="font-heading font-semibold text-xl text-header-dark mb-2">{name}</h3>
+  <p class="text-primary font-semibold mb-2">{role}</p>
+  <p class="text-text-gray text-sm">{description}</p>
+</div>

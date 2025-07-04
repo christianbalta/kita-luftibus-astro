@@ -1,0 +1,37 @@
+---
+import Button from './Button.astro';
+
+const navItems = [
+  { href: '#about', label: 'Über uns' },
+  { href: '#team', label: 'Team' },
+  { href: '#testimonials', label: 'Erfahrungen' },
+  { href: '#news', label: 'News' },
+  { href: '#contact', label: 'Kontakt' },
+];
+---
+
+<header class="bg-background-cream sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4">
+    <nav class="flex items-center justify-between">
+      <div class="flex items-center">
+        <img src="/images/kita-luftibus-logo.png" alt="Kita Luftibus logo" class="h-20 w-auto" />
+      </div>
+      
+      <div class="hidden md:flex items-center space-x-8">
+        {navItems.map(item => (
+          <a href={item.href} class="text-text-gray hover:text-primary transition-colors">
+            {item.label}
+          </a>
+        ))}
+      </div>
+      
+      <div class="hidden md:block">
+        <Button href="#contact">Kontakt aufnehmen</Button>
+      </div>
+      
+      <button id="mobile-menu-toggle" class="md:hidden text-header-dark">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </nav>
+  </div>
+</header>

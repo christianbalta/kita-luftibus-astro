@@ -1,0 +1,33 @@
+---
+export interface Props {
+  quote: string;
+  family: string;
+  child: string;
+  bgColor: string;
+  quoteColor: string;
+}
+
+const { quote, family, child, bgColor, quoteColor } = Astro.props;
+const textColor = bgColor === 'bg-header-dark' || bgColor === 'bg-header-darker' ? 'text-text-light' : 'text-white';
+const avatarBg = bgColor === 'bg-secondary-teal' ? 'bg-white' : 'bg-primary';
+const avatarIcon = bgColor === 'bg-secondary-teal' ? 'text-secondary-teal' : 'text-white';
+---
+
+<div class={`testimonial-card ${bgColor} text-white p-8 rounded-2xl relative transform transition-transform duration-300 hover:-translate-y-1`}>
+  <div class="mb-6">
+    <i class={`fas fa-quote-left ${quoteColor} text-2xl`}></i>
+  </div>
+  <p class={`${textColor} mb-6 leading-relaxed`}>
+    "{quote}"
+  </p>
+  <div class="flex items-center space-x-3">
+    <div class={`w-10 h-10 ${avatarBg} rounded-full flex items-center justify-center`}>
+      <i class={`fas fa-user ${avatarIcon}`}></i>
+    </div>
+    <div>
+      <p class="font-semibold">{family}</p>
+      <p class={`text-sm ${textColor === 'text-text-light' ? 'opacity-75' : 'opacity-75'}`}>{child}</p>
+    </div>
+  </div>
+  <div class={`absolute -bottom-2 left-8 w-4 h-4 ${bgColor} transform rotate-45`}></div>
+</div>

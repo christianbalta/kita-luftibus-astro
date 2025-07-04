@@ -1,0 +1,113 @@
+---
+import Button from './Button.astro';
+
+const navItems = [
+  { href: '#', label: 'Startseite' },
+  { href: '#about', label: 'Über Uns' },
+  { href: '#', label: 'Pädagogisches Konzept', hasSubmenu: true },
+  { href: '#contact', label: 'Kontakt' },
+];
+
+const contactInfo = {
+  address: 'Rümikerstasse 58, 8409 Winterthur',
+  email: 'info@kita-luftibus.ch',
+  hours: 'Mo-Fr, 07:00-18:15 Uhr',
+  phone: '052 223 13 24'
+};
+---
+
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-background-cream transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+  <div class="flex flex-col h-full">
+    <!-- Header -->
+    <div class="flex items-center justify-between p-4">
+      <div class="flex items-center">
+        <img src="/images/kita-luftibus-logo.png" alt="Kita Luftibus" class="h-20 w-auto" />
+      </div>
+      <button id="mobile-menu-close" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+        <i class="fas fa-times text-xl"></i>
+      </button>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="flex-1 px-4 py-6">
+      <ul class="space-y-6">
+        {navItems.map(item => (
+          <li>
+            {item.hasSubmenu ? (
+              <div class="flex items-center justify-between py-2">
+                <a href={item.href} class="text-header-dark text-lg font-medium">{item.label}</a>
+                <i class="fas fa-plus text-header-dark"></i>
+              </div>
+            ) : (
+              <a href={item.href} class="text-header-dark text-lg font-medium block py-2">{item.label}</a>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
+    <!-- Contact Section -->
+    <div class="px-4 py-6">
+      <h3 class="text-header-dark text-xl font-heading font-semibold mb-4">Kontakt</h3>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-map-marker-alt text-primary"></i>
+          <span class="text-text-gray">{contactInfo.address}</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-envelope text-primary"></i>
+          <span class="text-text-gray">{contactInfo.email}</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-clock text-primary"></i>
+          <span class="text-text-gray">{contactInfo.hours}</span>
+        </div>
+        <div class="flex items-center space-x-3">
+          <i class="fas fa-phone text-primary"></i>
+          <span class="text-text-gray">{contactInfo.phone}</span>
+        </div>
+      </div>
+      
+      <Button class="w-full mb-6">
+        Anmeldung <i class="fas fa-arrow-right ml-2"></i>
+      </Button>
+      
+      <div class="flex justify-center">
+        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  
+  function openMobileMenu() {
+    mobileMenu?.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('translate-x-full');
+    document.body.style.overflow = '';
+  }
+  
+  mobileMenuToggle?.addEventListener('click', openMobileMenu);
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+  
+  // Close mobile menu when clicking on navigation links
+  document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  // Close mobile menu when clicking outside
+  mobileMenu?.addEventListener('click', function(e) {
+    if (e.target === mobileMenu) {
+      closeMobileMenu();
+    }
+  });
+</script>

@@ -1,0 +1,48 @@
+---
+import TestimonialCard from './TestimonialCard.astro';
+
+const testimonials = [
+  {
+    quote: "Unser Sohn liebt es, jeden Tag in die Kita zu gehen. Das Team ist so herzlich und die skandinavische Pädagogik passt perfekt zu unseren Werten.",
+    family: "Familie Müller",
+    child: "Eltern von Luca (3 Jahre)",
+    bgColor: "bg-header-dark",
+    quoteColor: "text-primary"
+  },
+  {
+    quote: "Die Betreuung ist so liebevoll und professionell. Emma hat hier so viel gelernt und ist selbstbewusster geworden.",
+    family: "Familie Weber",
+    child: "Eltern von Emma (4 Jahre)",
+    bgColor: "bg-secondary-teal",
+    quoteColor: "text-white"
+  },
+  {
+    quote: "Wir sind so dankbar für die individuelle Betreuung und die wunderschöne Atmosphäre in der Kita Luftibus.",
+    family: "Familie Schmidt",
+    child: "Eltern von Noah (2 Jahre)",
+    bgColor: "bg-primary",
+    quoteColor: "text-white"
+  },
+  {
+    quote: "Das Outdoor-Konzept und die Naturverbundenheit machen den Unterschied. Sophie ist jeden Tag glücklich.",
+    family: "Familie Berger",
+    child: "Eltern von Sophie (5 Jahre)",
+    bgColor: "bg-header-darker",
+    quoteColor: "text-primary"
+  }
+];
+---
+
+<section id="testimonials" class="py-20 lg:py-32">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-4">
+        Was die Eltern sagen
+      </h2>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {testimonials.map(testimonial => <TestimonialCard {...testimonial} />)}
+    </div>
+  </div>
+</section>

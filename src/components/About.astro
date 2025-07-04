@@ -1,0 +1,51 @@
+---
+import Button from './Button.astro';
+
+const features = [
+  { icon: 'check-circle', title: 'Natur & Umwelt', description: 'Regelmässige Outdoor-Aktivitäten' },
+  { icon: 'check-circle', title: 'Kreativität', description: 'Freies Spiel und Kunstprojekte' },
+  { icon: 'check-circle', title: 'Soziales Lernen', description: 'Gemeinschaftsgefühl entwickeln' },
+  { icon: 'check-circle', title: 'Individualität', description: 'Jedes Kind in seinem Tempo' },
+];
+---
+
+<section id="about" class="py-20 lg:py-32">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="relative">
+        <img src="/images/about/kind-beim-spielen.jpeg" alt="Kind beim Spielen" class="w-full rounded-2xl shadow-default" />
+        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-10"></div>
+      </div>
+      
+      <div>
+        <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+          Ein skandinavischer
+          <span class="text-primary"> Blickwinkel</span>
+        </h2>
+        <p class="text-text-gray text-lg mb-8 leading-relaxed">
+          Unser pädagogisches Konzept basiert auf der skandinavischen Bildungsphilosophie, die das Kind als kompetenten und neugierigen Forscher betrachtet. Wir schaffen eine Umgebung, in der Kinder frei explorieren, experimentieren und ihre eigenen Erfahrungen machen können.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {features.map(feature => (
+            <div class="flex items-start space-x-3">
+              <i class={`fas fa-${feature.icon} text-primary text-xl mt-1`}></i>
+              <div>
+                <h4 class="font-heading font-semibold text-header-dark mb-1">{feature.title}</h4>
+                <p class="text-text-gray text-sm">{feature.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="flex items-center space-x-4">
+          <Button href="#contact">Mehr erfahren</Button>
+          <div class="flex items-center space-x-2 text-text-gray">
+            <i class="fas fa-phone text-primary"></i>
+            <span class="font-semibold">052 213 15 48</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

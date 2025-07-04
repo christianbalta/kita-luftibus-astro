@@ -1,0 +1,100 @@
+---
+const contactInfo = {
+  phone: '052 213 15 48',
+  email: 'info@kita-luftibus.ch',
+  address: {
+    street: 'Rümikerstrasse 58',
+    city: '8409 Winterthur'
+  }
+};
+
+const openingHours = [
+  { day: 'Montag - Freitag', time: '07:00 - 18:00' },
+  { day: 'Samstag', time: 'Geschlossen' },
+  { day: 'Sonntag', time: 'Geschlossen' }
+];
+---
+
+<footer id="contact" class="bg-background-cream py-20">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div>
+        <div class="flex items-center mb-6">
+          <img src="/images/logo.svg" alt="Kita Luftibus" class="h-8 w-auto" />
+          <span class="ml-2 text-lg font-heading font-semibold text-header-dark">Luftibus</span>
+        </div>
+        <p class="text-text-gray mb-6">
+          Skandinavische Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-opacity-80 transition-colors">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-opacity-80 transition-colors">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-heading font-semibold text-header-dark mb-4">Kontakt</h4>
+        <div class="space-y-3">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-phone text-primary"></i>
+            <span class="text-text-gray">{contactInfo.phone}</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-envelope text-primary"></i>
+            <span class="text-text-gray">{contactInfo.email}</span>
+          </div>
+          <div class="flex items-start space-x-3">
+            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+            <div class="text-text-gray">
+              <p>{contactInfo.address.street}</p>
+              <p>{contactInfo.address.city}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-heading font-semibold text-header-dark mb-4">Öffnungszeiten</h4>
+        <div class="space-y-2 text-text-gray">
+          {openingHours.map(hour => (
+            <div class="flex justify-between">
+              <span>{hour.day}:</span>
+              <span>{hour.time}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <div>
+        <h4 class="font-heading font-semibold text-header-dark mb-4">Zertifizierungen</h4>
+        <div class="space-y-4">
+          <div class="flex items-center space-x-3">
+            <img src="/images/kibesuisse-logo.png" alt="KiBesuisse" class="h-8 w-auto" />
+            <span class="text-text-gray text-sm">KiBesuisse</span>
+          </div>
+          <div class="flex items-center space-x-3">
+            <img src="/images/klax-logo.png" alt="KLAX" class="h-8 w-auto" />
+            <span class="text-text-gray text-sm">KLAX Pädagogik</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="border-t border-border-light pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-text-gray text-sm mb-4 md:mb-0">
+          © 2024 Kita Luftibus Winterthur. Alle Rechte vorbehalten.
+        </p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-text-gray hover:text-primary text-sm transition-colors">Datenschutz</a>
+          <a href="#" class="text-text-gray hover:text-primary text-sm transition-colors">Impressum</a>
+          <a href="#" class="text-text-gray hover:text-primary text-sm transition-colors">AGB</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

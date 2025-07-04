@@ -1,0 +1,38 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="hero-section bg-background-cream relative overflow-hidden">
+  <div class="container mx-auto px-4 py-20 lg:py-32">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="relative z-10">
+        <h1 class="font-heading font-bold text-4xl lg:text-7xl text-header-dark mb-6">
+          Kita Luftibus
+          <span class="text-primary block">Winterthur</span>
+        </h1>
+        <p class="text-text-gray text-lg lg:text-xl mb-8 leading-relaxed">
+          Ein liebevoller Ort für Kinder zwischen 3 Monaten und 5 Jahren. Unser skandinavisches Bildungskonzept fördert die natürliche Entwicklung und Kreativität Ihres Kindes.
+        </p>
+        <Button href="#about">Mehr erfahren</Button>
+      </div>
+      
+      <div class="relative">
+        <div class="relative z-10">
+          <img src="/images/hero/hero-pippi-langstrumpf.png" alt="Fröhliches Kind" class="w-full max-w-md mx-auto" />
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute -top-4 -left-4 w-8 h-8 bg-secondary-teal rounded-full opacity-60"></div>
+        <div class="absolute top-20 -right-8 w-12 h-12 bg-secondary-yellow rounded-full opacity-60"></div>
+        <div class="absolute -bottom-8 left-12 w-6 h-6 bg-primary rounded-full opacity-60"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Floating decorative elements -->
+  <div class="absolute top-1/4 left-8 w-16 h-16 opacity-20 animate-float">
+    <i class="fas fa-star text-secondary-yellow text-2xl"></i>
+  </div>
+  <div class="absolute bottom-1/4 right-8 w-16 h-16 opacity-20 animate-float" style="animation-delay: 1.5s;">
+    <i class="fas fa-heart text-primary text-2xl"></i>
+  </div>
+</section>

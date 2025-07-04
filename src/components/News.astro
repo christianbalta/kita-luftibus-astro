@@ -1,0 +1,40 @@
+---
+import Button from './Button.astro';
+import NewsCard from './NewsCard.astro';
+
+const newsItems = [
+  {
+    date: '15. Juni 2024',
+    title: 'Sommerfest mit Familien',
+    description: 'Ein wundervoller Tag mit Spielen, Musik und gemeinsamen Aktivitäten im Kita-Garten.',
+    image: '/images/news-1.jpg'
+  },
+  {
+    date: '8. Juni 2024',
+    title: 'Waldtag - Natur erleben',
+    description: 'Unsere Kinder entdecken die Natur und lernen spielerisch über Pflanzen und Tiere.',
+    image: '/images/news-2.jpg'
+  },
+  {
+    date: '1. Juni 2024',
+    title: 'Willkommen im Team',
+    description: 'Wir freuen uns, eine neue Kollegin in unserem Team begrüßen zu dürfen.',
+    image: '/images/news-3.jpg'
+  }
+];
+---
+
+<section id="news" class="py-20 lg:py-32 bg-background-cream">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-between mb-16">
+      <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark">
+        Entdecke unsere News
+      </h2>
+      <Button href="/news">Alle News</Button>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {newsItems.map(item => <NewsCard {...item} />)}
+    </div>
+  </div>
+</section>
