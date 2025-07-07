@@ -6,16 +6,16 @@ import Button from './Button.astro';
   <div class="container mx-auto px-4 py-20 lg:py-32">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="relative z-10">
-        <h1 class="font-heading font-bold text-4xl lg:text-7xl text-header-dark mb-6">
+        <h1 class="font-family-heading font-bold text-4xl lg:text-7xl text-header-dark mb-6">
           Kita Luftibus
           <span class="text-primary block">Winterthur</span>
         </h1>
         <p class="text-text-gray text-lg lg:text-xl mb-8 leading-relaxed">
           Ein liebevoller Ort für Kinder zwischen 3 Monaten und 5 Jahren. Unser skandinavisches Bildungskonzept fördert die natürliche Entwicklung und Kreativität Ihres Kindes.
         </p>
-        <Button href="#about">Mehr erfahren</Button>
+        <Button href="#about">Anmeldung</Button>
       </div>
-      
+
       <div class="relative">
         <div class="relative z-10">
           <img src="/images/hero/hero-pippi-langstrumpf.png" alt="Fröhliches Kind" class="w-full max-w-md mx-auto" />
@@ -27,12 +27,17 @@ import Button from './Button.astro';
       </div>
     </div>
   </div>
-  
-  <!-- Floating decorative elements -->
-  <div class="absolute top-1/4 left-8 w-16 h-16 opacity-20 animate-float">
-    <i class="fas fa-star text-secondary-yellow text-2xl"></i>
+
+  <!-- Floating decorative images - hidden on mobile -->
+  <div class="absolute top-1/4 left-8 animate-float hidden md:block">
+    <img src="/images/decoration/parasuit.png" alt="Heissluft ballon" class="w-full h-full" />
   </div>
-  <div class="absolute bottom-1/4 right-8 w-16 h-16 opacity-20 animate-float" style="animation-delay: 1.5s;">
-    <i class="fas fa-heart text-primary text-2xl"></i>
+  <div class="absolute bottom-1/4 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
+    <img src="/images/decoration/bee.png" alt="Bienen" class="w-full h-full" />
+  </div>
+
+  <!-- Bottom shape -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <img src="/images/backgrounds/bottom-shape.png" alt="Bottom shape" />
   </div>
 </section>

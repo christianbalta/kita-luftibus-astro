@@ -3,31 +3,39 @@ import TeamCard from './TeamCard.astro';
 
 const teamMembers = [
   {
-    name: 'Sandra',
-    role: 'Kita-Leitung',
-    description: 'Erzieherin seit 2008, spezialisiert auf skandinavische Pädagogik',
-    image: '/images/team-sandra.jpg',
-    gradient: 'from-[#F39F5F] to-[#70A6B1]'
+    name: 'Maria',
+    role: 'Kitaleitung',
+    description: 'Praxisausbildnerin FaBe K & HF, Kleinkindpädagogik, Expertin FaBe K',
+    image: '/images/team/Maria-team-bild.png',
   },
   {
-    name: 'Sabrina',
+    name: 'Stefanie',
     role: 'Gruppenleiterin',
-    description: 'Kindheitspädagogin mit Fokus auf Naturpädagogik',
-    image: '/images/team-sabrina.jpg',
-    gradient: 'from-[#70A6B1] to-[#F5C748]'
+    description: 'Stv. Kitaleitung',
+    image: '/images/team/Stefanie-team-bild.png',
   },
   {
-    name: 'Francesca',
+    name: 'Nada',
+    role: 'CO Gruppenleiterin',
+    description: 'HF Kleinkindpädagogin',
+    image: '/images/team/Nada-team-bild.png',
+  },
+  {
+    name: 'Franziska',
     role: 'Erzieherin',
-    description: 'Mehrsprachige Betreuung und kreative Förderung',
-    image: '/images/team-francesca.jpg',
-    gradient: 'from-[#F5C748] to-[#F39F5F]'
+    description: 'Mitarbeiterin im Qualifikationsverfahren in der Kita Luftibus seit Mai 2024',
+    image: '/images/team/Franziska-team-bild.png',
   }
 ];
 ---
 
-<section id="team" class="py-20 lg:py-32 bg-background-light-blue">
-  <div class="container mx-auto px-4">
+<section id="team" class="py-20 lg:py-32 bg-background-cream relative overflow-hidden">
+  <!-- Top shape -->
+  <div class="absolute top-0 left-0 right-0">
+    <img src="/images/backgrounds/section-top-shape.png" alt="Top shape" />
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
     <div class="text-center mb-16">
       <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-4">
         Team Luftibus
@@ -36,9 +44,85 @@ const teamMembers = [
         Unser engagiertes Team aus erfahrenen Pädagoginnen begleitet Ihr Kind liebevoll durch den Kita-Alltag.
       </p>
     </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {teamMembers.map(member => <TeamCard {...member} />)}
+
+    <div class="team-slider-container relative max-w-6xl mx-auto px-12">
+      <div class="team-slider-wrapper overflow-hidden">
+        <div class="team-slider flex transition-transform duration-300 ease-in-out">
+          {teamMembers.map(member => (
+            <div class="team-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+              <TeamCard {...member} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <button class="slider-nav-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 focus:outline-none hover:bg-gray-50 transition-colors" aria-label="Previous slide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <button class="slider-nav-btn next absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 focus:outline-none hover:bg-gray-50 transition-colors" aria-label="Next slide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.team-slider');
+    const prevBtn = document.querySelector('.slider-nav-btn.prev');
+    const nextBtn = document.querySelector('.slider-nav-btn.next');
+    const slides = document.querySelectorAll('.team-slide');
+
+    if (!slider || !prevBtn || !nextBtn || slides.length === 0) return;
+
+    let currentIndex = 0;
+    const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    const maxIndex = Math.max(0, slides.length - slidesToShow);
+
+    function updateSlider() {
+      const slideWidth = slides[0].offsetWidth;
+      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+      // Update button states
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.classList.toggle('opacity-50', currentIndex === 0);
+      nextBtn.disabled = currentIndex >= maxIndex;
+      nextBtn.classList.toggle('opacity-50', currentIndex >= maxIndex);
+    }
+
+    function handleResize() {
+      const newSlidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      const newMaxIndex = Math.max(0, slides.length - newSlidesToShow);
+
+      if (currentIndex > newMaxIndex) {
+        currentIndex = newMaxIndex;
+      }
+
+      updateSlider();
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+      }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateSlider();
+      }
+    });
+
+    window.addEventListener('resize', handleResize);
+
+    // Initial setup
+    updateSlider();
+  });
+</script>
