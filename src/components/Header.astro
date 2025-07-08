@@ -1,37 +1,70 @@
 ---
 import Button from './Button.astro';
+import {getMainNavItems, sitemap} from '../config/navigation';
 
-const navItems = [
-  { href: '#about', label: 'Über uns' },
-  { href: '#team', label: 'Team' },
-  { href: '#testimonials', label: 'Erfahrungen' },
-  { href: '#news', label: 'News' },
-  { href: '#contact', label: 'Kontakt' },
-];
+const navItems = getMainNavItems();
 ---
 
 <header class="bg-background-cream sticky top-0 z-50">
   <div class="container mx-auto px-4 py-4">
     <nav class="flex items-center justify-between">
       <div class="flex items-center">
-        <img src="/images/kita-luftibus-logo.png" alt="Kita Luftibus logo" class="h-20 w-auto" />
+        <img src="/images/kita-luftibus-logo.png" alt="Kita Luftibus logo" class="h-20 w-auto"/>
       </div>
-      
+
       <div class="hidden md:flex items-center space-x-8">
         {navItems.map(item => (
-          <a href={item.href} class="text-text-gray hover:text-primary transition-colors">
-            {item.label}
-          </a>
+            <div class="relative group">
+              <a
+                  href={item.href}
+                  class={`text-text-gray hover:text-primary transition-colors ${item.hasSubmenu ? 'flex items-center' : ''}`}
+              >
+                {item.label}
+                {item.hasSubmenu && (
+                    <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                )}
+              </a>
+
+              {item.hasSubmenu && (
+                  <div
+                      class="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md overflow-hidden z-50 transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200">
+                    <div class="py-2">
+                      {(() => {
+                        const mainItem = Object.values(sitemap.main_navigation).find(nav => nav.title === item.label);
+
+                        if (mainItem && 'subpages' in mainItem && mainItem.subpages) {
+                          return Object.values(mainItem.subpages).map(subItem => (
+                              <a
+                                  href={subItem.url}
+                                  class="block px-4 py-2 text-text-gray hover:bg-background-cream hover:text-primary transition-colors"
+                              >
+                                {subItem.title}
+                              </a>
+                          ));
+                        }
+                        return null;
+                      })()}
+                    </div>
+                  </div>
+              )}
+            </div>
         ))}
       </div>
-      
+
       <div class="hidden md:block">
-        <Button href="#contact">Anmeldung</Button>
+        <Button href="/verfuegbare-plaetze-anmeldung">Anmeldung</Button>
       </div>
-      
+
       <button id="mobile-menu-toggle" class="md:hidden text-header-dark">
         <i class="fas fa-bars text-2xl"></i>
       </button>
     </nav>
   </div>
 </header>
+
+<style>
+  /* Ensure dropdown menus appear on hover */
+  .group:hover .group-hover\:scale-100 {
+    transform: scale(1);
+  }
+</style>
