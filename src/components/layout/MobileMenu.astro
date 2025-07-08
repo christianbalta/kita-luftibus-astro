@@ -1,6 +1,6 @@
 ---
-import Button from './Button.astro';
-import {getMainNavItems, sitemap} from '../config/navigation';
+import Button from '../common/Button.astro';
+import {getMainNavItems, sitemap} from '../../config/navigation';
 
 const navItems = getMainNavItems();
 
@@ -18,7 +18,7 @@ const contactInfo = {
     <!-- Header -->
     <div class="flex items-center justify-between p-4">
       <div class="flex items-center">
-        <img src="/images/kita-luftibus-logo.png" alt="Kita Luftibus" class="h-20 w-auto"/>
+        <img src="/src/assets/images/kita-luftibus-logo.png" alt="Kita Luftibus" class="h-20 w-auto"/>
       </div>
       <button id="mobile-menu-close"
               class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">

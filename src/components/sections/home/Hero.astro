@@ -1,5 +1,11 @@
 ---
-import Button from './Button.astro';
+import Button from '../../common/Button.astro';
+import {Image} from 'astro:assets';
+
+import heroPippi from '../../../assets/images/hero/hero-pippi-langstrumpf.png';
+import parasuit from '../../../assets//images/decoration/parasuit.png';
+import bee from '../../../assets/images/decoration/bee.png';
+import bottomShape from '../../../assets/images/backgrounds/bottom-shape.png';
 ---
 
 <section class="hero-section bg-background-cream relative overflow-hidden">
@@ -18,7 +24,11 @@ import Button from './Button.astro';
 
       <div class="relative">
         <div class="relative z-10">
-          <img src="/images/hero/hero-pippi-langstrumpf.png" alt="Fröhliches Kind" class="w-full max-w-md mx-auto" />
+          <Image
+              src={heroPippi}
+              alt="Fröhliches Kind"
+              class="w-full max-w-md mx-auto"
+          />
         </div>
         <!-- Decorative elements -->
         <div class="absolute -top-4 -left-4 w-8 h-8 bg-secondary-teal rounded-full opacity-60"></div>
@@ -30,14 +40,25 @@ import Button from './Button.astro';
 
   <!-- Floating decorative images - hidden on mobile -->
   <div class="absolute top-1/4 left-8 animate-float hidden md:block">
-    <img src="/images/decoration/parasuit.png" alt="Heissluft ballon" class="w-full h-full" />
+    <Image
+        src={parasuit}
+        alt="Heissluft ballon"
+        class="w-full h-full"
+    />
   </div>
   <div class="absolute bottom-1/4 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
-    <img src="/images/decoration/bee.png" alt="Bienen" class="w-full h-full" />
+    <Image
+        src={bee}
+        alt="Bienen"
+        class="w-full h-full"
+    />
   </div>
 
   <!-- Bottom shape -->
   <div class="absolute bottom-0 left-0 right-0">
-    <img src="/images/backgrounds/bottom-shape.png" alt="Bottom shape" />
+    <Image
+        src={bottomShape}
+        alt="Bottom shape"
+    />
   </div>
 </section>
