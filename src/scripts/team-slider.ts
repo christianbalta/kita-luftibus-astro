@@ -1,4 +1,3 @@
-// src/scripts/teamSlider.ts
 export class TeamSlider {
   private slider: HTMLElement;
   private prevBtn: HTMLButtonElement;

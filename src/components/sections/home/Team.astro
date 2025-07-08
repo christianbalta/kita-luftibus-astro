@@ -51,7 +51,8 @@ const teamMembers = [
         Team Luftibus
       </h2>
       <p class="text-text-gray text-lg max-w-2xl mx-auto">
-        Unser engagiertes Team aus erfahrenen Pädagoginnen begleitet Ihr Kind liebevoll durch den Kita-Alltag.
+        Unser engagiertes Team aus erfahrenen Pädagoginnen begleitet Ihr Kind liebevoll durch den
+        Kita-Alltag.
       </p>
     </div>
 
@@ -60,21 +61,33 @@ const teamMembers = [
         <div class="team-slider flex transition-transform duration-300 ease-in-out">
           {teamMembers.map(member => (
               <div class="team-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-                <TeamCard {...member} />
+                <TeamCard
+                    name={member.name}
+                    role={member.role}
+                    description={member.description}
+                    image={member.image}
+                />
               </div>
           ))}
         </div>
       </div>
 
-      <button class="slider-nav-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 focus:outline-none hover:bg-gray-50 transition-colors" aria-label="Previous slide">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      <button
+          class="slider-nav-btn prev absolute top-1/2 left-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 focus:outline-none hover:bg-gray-50 transition-colors"
+          aria-label="Previous slide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
 
-      <button class="slider-nav-btn next absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 focus:outline-none hover:bg-gray-50 transition-colors" aria-label="Next slide">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      <button
+          class="slider-nav-btn next absolute top-1/2 right-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-20 focus:outline-none hover:bg-gray-50 transition-colors"
+          aria-label="Next slide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
         </svg>
       </button>
     </div>
@@ -82,5 +95,5 @@ const teamMembers = [
 </section>
 
 <script>
-  import '../../../scripts/teamSlider.ts';
+  import '../../../scripts/team-slider.ts';
 </script>

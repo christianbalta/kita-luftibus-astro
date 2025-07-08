@@ -22,9 +22,9 @@ const contactInfo = {
     <div class="flex items-center justify-between p-4">
       <div class="flex items-center">
         <Image
-          src={logo}
-          alt="Kita Luftibus"
-          class="h-20 w-auto"
+            src={logo}
+            alt="Kita Luftibus"
+            class="h-20 w-auto"
         />
       </div>
       <button id="mobile-menu-close"
@@ -110,60 +110,9 @@ const contactInfo = {
 </div>
 
 <script>
-  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  import {initializeMobileMenu} from '../../scripts/mobile-menu';
 
-  function openMobileMenu() {
-    mobileMenu?.classList.remove('translate-x-full');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeMobileMenu() {
-    mobileMenu?.classList.add('translate-x-full');
-    document.body.style.overflow = '';
-  }
-
-  mobileMenuToggle?.addEventListener('click', openMobileMenu);
-  mobileMenuClose?.addEventListener('click', closeMobileMenu);
-
-  // Toggle submenu visibility
-  document.querySelectorAll('[data-toggle-submenu]').forEach(toggle => {
-    toggle.addEventListener('click', function (e) {
-      // Prevent navigation if clicking on the toggle area (but not on the link)
-      if (e.target === toggle || e.target.classList.contains('submenu-icon')) {
-        e.preventDefault();
-
-        // Find the submenu
-        const submenu = this.nextElementSibling;
-
-        // Toggle submenu visibility
-        submenu.classList.toggle('hidden');
-
-        // Toggle icon between plus and minus
-        const icon = this.querySelector('.submenu-icon');
-        if (icon) {
-          if (submenu.classList.contains('hidden')) {
-            icon.classList.remove('fa-minus');
-            icon.classList.add('fa-plus');
-          } else {
-            icon.classList.remove('fa-plus');
-            icon.classList.add('fa-minus');
-          }
-        }
-      }
-    });
-  });
-
-  // Close mobile menu when clicking on navigation links
-  document.querySelectorAll('#mobile-menu a[href^="/"]').forEach(link => {
-    link.addEventListener('click', closeMobileMenu);
-  });
-
-  // Close mobile menu when clicking outside
-  mobileMenu?.addEventListener('click', function (e) {
-    if (e.target === mobileMenu) {
-      closeMobileMenu();
-    }
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeMobileMenu();
   });
 </script>
