@@ -1,10 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+
 export interface Props {
   name: string;
   role: string;
   description: string;
-  image: string;
-  gradient: string;
+  image: ImageMetadata;
+  gradient?: string;
 }
 
 const {name, role, description, image, gradient} = Astro.props;
@@ -12,7 +14,11 @@ const {name, role, description, image, gradient} = Astro.props;
 
 
 <div class="relative mb-6">
-  <img src={image} alt={name} class="w-full h-full mx-auto object-cover rounded-2xl shadow"/>
+  <Image
+    src={image}
+    alt={name}
+    class="w-full h-full mx-auto object-cover rounded-2xl shadow"
+  />
 </div>
 
 <div class="text-center">

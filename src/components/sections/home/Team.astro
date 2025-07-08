@@ -1,30 +1,37 @@
 ---
 import TeamCard from '../../cards/TeamCard.astro';
+import {Image} from 'astro:assets';
+
+import topShape from '../../../assets/images/backgrounds/section-top-shape.png';
+import mariaBild from '../../../assets/images/team/Maria-team-bild.png';
+import stefanieBild from '../../../assets/images/team/Stefanie-team-bild.png';
+import nadaBild from '../../../assets/images/team/Nada-team-bild.png';
+import franziskaBild from '../../../assets/images/team/Franziska-team-bild.png';
 
 const teamMembers = [
   {
     name: 'Maria',
     role: 'Kitaleitung',
     description: 'Praxisausbildnerin FaBe K & HF, Kleinkindpädagogik, Expertin FaBe K',
-    image: '/images/team/Maria-team-bild.png',
+    image: mariaBild,
   },
   {
     name: 'Stefanie',
     role: 'Gruppenleiterin',
     description: 'Stv. Kitaleitung',
-    image: '/images/team/Stefanie-team-bild.png',
+    image: stefanieBild,
   },
   {
     name: 'Nada',
     role: 'CO Gruppenleiterin',
     description: 'HF Kleinkindpädagogin',
-    image: '/images/team/Nada-team-bild.png',
+    image: nadaBild,
   },
   {
     name: 'Franziska',
     role: 'Erzieherin',
     description: 'Mitarbeiterin im Qualifikationsverfahren in der Kita Luftibus seit Mai 2024',
-    image: '/images/team/Franziska-team-bild.png',
+    image: franziskaBild,
   }
 ];
 ---
@@ -32,7 +39,10 @@ const teamMembers = [
 <section id="team" class="py-20 lg:py-32 bg-background-cream relative overflow-hidden">
   <!-- Top shape -->
   <div class="absolute top-0 left-0 right-0">
-    <img src="/src/assets/images/backgrounds/section-top-shape.png" alt="Top shape" />
+    <Image
+        src={topShape}
+        alt="Top shape"
+    />
   </div>
 
   <div class="container mx-auto px-4 relative z-10">
@@ -49,9 +59,9 @@ const teamMembers = [
       <div class="team-slider-wrapper overflow-hidden">
         <div class="team-slider flex transition-transform duration-300 ease-in-out">
           {teamMembers.map(member => (
-            <div class="team-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
-              <TeamCard {...member} />
-            </div>
+              <div class="team-slide w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                <TeamCard {...member} />
+              </div>
           ))}
         </div>
       </div>
@@ -72,57 +82,5 @@ const teamMembers = [
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.team-slider');
-    const prevBtn = document.querySelector('.slider-nav-btn.prev');
-    const nextBtn = document.querySelector('.slider-nav-btn.next');
-    const slides = document.querySelectorAll('.team-slide');
-
-    if (!slider || !prevBtn || !nextBtn || slides.length === 0) return;
-
-    let currentIndex = 0;
-    const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-    const maxIndex = Math.max(0, slides.length - slidesToShow);
-
-    function updateSlider() {
-      const slideWidth = slides[0].offsetWidth;
-      slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-
-      // Update button states
-      prevBtn.disabled = currentIndex === 0;
-      prevBtn.classList.toggle('opacity-50', currentIndex === 0);
-      nextBtn.disabled = currentIndex >= maxIndex;
-      nextBtn.classList.toggle('opacity-50', currentIndex >= maxIndex);
-    }
-
-    function handleResize() {
-      const newSlidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
-      const newMaxIndex = Math.max(0, slides.length - newSlidesToShow);
-
-      if (currentIndex > newMaxIndex) {
-        currentIndex = newMaxIndex;
-      }
-
-      updateSlider();
-    }
-
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
-      }
-    });
-
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateSlider();
-      }
-    });
-
-    window.addEventListener('resize', handleResize);
-
-    // Initial setup
-    updateSlider();
-  });
+  import '../../../scripts/teamSlider.ts';
 </script>
