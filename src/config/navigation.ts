@@ -1,7 +1,3 @@
-// Navigation configuration for the site
-// This file defines the navigation structure used by both Header and MobileMenu components
-
-// Define proper types for better type safety
 interface BaseNavItem {
   title: string;
   url: string;
@@ -74,12 +70,10 @@ export const sitemap: SiteMap = {
   }
 };
 
-// Type guard function to check if an item has subpages
 function hasSubpages(item: NavItem): item is NavItemWithSubpages {
   return 'subpages' in item;
 }
 
-// Type for navigation items returned by helper functions
 interface NavigationItem {
   href: string;
   label: string;
@@ -88,7 +82,6 @@ interface NavigationItem {
   parentUrl?: string;
 }
 
-// Helper functions to convert the sitemap to a flat array for a Header component
 export function getMainNavItems(): NavigationItem[] {
   return Object.values(sitemap.main_navigation).map(item => ({
     href: item.url,
@@ -97,7 +90,6 @@ export function getMainNavItems(): NavigationItem[] {
   }));
 }
 
-// Helper function to get all navigation items including subpages
 export function getAllNavItems(): NavigationItem[] {
   const items: NavigationItem[] = [];
 
