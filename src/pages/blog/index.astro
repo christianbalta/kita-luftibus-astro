@@ -61,32 +61,33 @@ const posts = (await getCollection('blog')).sort(
       <div class="container mx-auto px-4 pt-16">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <article class="bg-background-cream rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <article class="bg-white rounded-xl overflow-hidden shadow-default">
               {post.data.heroImage && (
-                <a href={`/blog/${post.id}`} class="block">
-                  <div class="relative h-48 overflow-hidden">
-                    <Image 
-                      src={post.data.heroImage} 
-                      alt={post.data.title} 
-                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                      width={500}
-                      height={500}
-                    />
-                  </div>
-                </a>
+                <div class="h-48 overflow-hidden">
+                  <Image 
+                    src={post.data.heroImage} 
+                    alt={post.data.title} 
+                    class="w-full h-full object-cover"
+                    width={500}
+                    height={500}
+                  />
+                </div>
               )}
               <div class="p-6">
-                <p class="text-primary text-sm mb-2">{post.data.pubDate}</p>
-                <h2 class="font-family-heading font-bold text-xl mb-3 text-header-dark">
-                  <a href={`/blog/${post.id}`} class="hover:text-primary transition-colors">
+                <div class="flex items-center space-x-2 text-text-gray text-sm mb-3">
+                  <i class="fas fa-calendar"></i>
+                  <span>{post.data.pubDate}</span>
+                </div>
+                <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">
+                  <a href={`/blog/${post.slug}`} class="hover:text-primary transition-colors">
                     {post.data.title}
                   </a>
-                </h2>
+                </h3>
                 <p class="text-text-gray mb-4 line-clamp-3">
                   {post.data.description}
                 </p>
-                <a href={`/blog/${post.id}`} class="inline-block text-primary font-semibold hover:underline">
-                  Weiterlesen →
+                <a href={`/blog/${post.slug}`} class="text-primary font-semibold hover:underline">
+                  Mehr lesen →
                 </a>
               </div>
             </article>
