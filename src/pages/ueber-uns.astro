@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/layout/TopBar.astro'
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import MobileMenu from '../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bus from '../assets/images/decoration/bus.png';
+import regenbogen from '../assets/images/decoration/frame.png';
+import kindBeimSpielen from '../assets/images/about/kind-beim-spielen.jpeg';
+import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
+import topShape from '../assets/images/backgrounds/section-top-shape.png';
+
+const highlights = [
+  {
+    icon: 'users',
+    title: 'Familienergänzende Betreuung',
+    description: 'Flexible Betreuungsformen für Säuglinge und Kleinkinder aller Nationalitäten'
+  },
+  {
+    icon: 'heart',
+    title: 'Spielen, Lernen, Träumen',
+    description: 'Ein Ort zum Spielen, Singen, Lachen, Lernen, Basteln, Geschichten hören und Träumen'
+  },
+  {
+    icon: 'home',
+    title: 'Harmonisches Zusammenleben',
+    description: 'Altersgemischte Gruppen, in denen Babys und ältere Kinder wie in einer grossen Familie gemeinsam den Tag verbringen'
+  },
+  {
+    icon: 'hands-helping',
+    title: 'Inklusive Betreuung',
+    description: 'Wir arbeiten inklusiv - Kinder mit besonderen Bedürfnissen haben auch ihren Platz bei uns'
+  }
+];
+
+const keyFacts = [
+  {
+    icon: 'calendar-alt',
+    title: '22 Plätze täglich',
+    description: 'Verteilt auf zwei altersgemischte Gruppen für Kinder ab 3 Monaten bis zum Kindergarteneintritt'
+  },
+  {
+    icon: 'sun',
+    title: 'Durchgehend geöffnet',
+    description: 'Die Kita Luftibus ist während der Sommerferien durchgehend geöffnet'
+  },
+  {
+    icon: 'graduation-cap',
+    title: 'Ausbildungsbetrieb',
+    description: 'Zwei Plätze für die Ausbildung «Fachperson Betreuung Fachrichtung Kinder» und HF Studienplätze'
+  }
+];
+---
+
+<Layout title="Über uns - Kita Luftibus Winterthur" description="Erfahren Sie mehr über unsere Kindertagesstätte, unsere Gruppen Fidibus und Wirbelwind, sowie unsere Trägerschaft und pädagogische Philosophie.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <!-- Floating decorative images - hidden on mobile -->
+      <div class="absolute top-8 left-8 animate-float hidden md:block">
+        <Image
+          src={bus}
+          alt="Bus Dekoration"
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="absolute bottom-8 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
+        <Image
+          src={regenbogen}
+          alt="Regenbogen Dekoration"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            Über <span class="text-primary">uns</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Lernen Sie die Kita Luftibus kennen - eine familienergänzende Einrichtung mit skandinavischer Pädagogik im Herzen von Winterthur.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Auf einen Blick Section -->
+    <section class="py-20 lg:py-32 bg-background-light relative overflow-hidden">
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+            Auf einen <span class="text-primary">Blick</span>
+          </h2>
+          <p class="text-text-gray text-lg max-w-2xl mx-auto">
+            Unsere Gruppen «Fidibus» und «Wirbelwind» bieten:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {highlights.map(highlight => (
+            <div class="bg-white rounded-2xl p-8 shadow-default hover:shadow-lg transition-shadow">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <i class={`fas fa-${highlight.icon} text-primary text-xl`}></i>
+                </div>
+                <div>
+                  <h3 class="font-heading font-semibold text-xl text-header-dark mb-2">{highlight.title}</h3>
+                  <p class="text-text-gray leading-relaxed">{highlight.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-default">
+          <p class="text-text-gray text-lg leading-relaxed text-center">
+            Raum für ein harmonisches Zusammenleben in zwei altersgemischten Gruppen, in denen Babys und ältere Kinder wie in einer grossen Familie gemeinsam den Tag verbringen und so den liebevollen, respektvollen Umgang miteinander lernen.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wichtiges in Kürze Section -->
+    <section class="py-20 bg-background-cream relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0">
+        <Image
+            src={topShape}
+            alt="Top shape"
+        />
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="relative">
+            <Image
+              src={kindBeimSpielen}
+              alt="Kinder beim Spielen in der Kita"
+              class="w-full rounded-2xl shadow-default"
+            />
+            <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-10"></div>
+          </div>
+
+          <div>
+            <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+              Wichtiges in <span class="text-primary">Kürze</span>
+            </h2>
+            
+            <div class="space-y-6">
+              {keyFacts.map(fact => (
+                <div class="flex items-start space-x-4">
+                  <div class="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                    <i class={`fas fa-${fact.icon} text-primary`}></i>
+                  </div>
+                  <div>
+                    <h3 class="font-heading font-semibold text-lg text-header-dark mb-1">{fact.title}</h3>
+                    <p class="text-text-gray leading-relaxed">{fact.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div class="mt-8 p-6 bg-background-light rounded-xl">
+              <p class="text-text-gray leading-relaxed font-bold">
+                Auch Kinder mit erhöhtem Betreuungsbedarf werden in unsere Gruppen aufgenommen.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trägerschaft und Leitung Section -->
+    <section class="py-20 bg-background-light">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+              Trägerschaft und <span class="text-primary">Leitung</span>
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-default">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <i class="fas fa-building text-primary text-xl"></i>
+                </div>
+                <h3 class="font-heading font-semibold text-xl text-header-dark">Trägerschaft</h3>
+              </div>
+              <p class="text-text-gray leading-relaxed">
+                Träger der Einrichtung ist der Verein «Kindertagesstätte Luftibus». Der Verein ist politisch und konfessionell neutral.
+              </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 shadow-default">
+              <div class="flex items-center space-x-4 mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <i class="fas fa-user-tie text-primary text-xl"></i>
+                </div>
+                <h3 class="font-heading font-semibold text-xl text-header-dark">Leitung</h3>
+              </div>
+              <p class="text-text-gray leading-relaxed">
+                Die Leitung liegt in den Händen von <strong>Maria Orlando</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
