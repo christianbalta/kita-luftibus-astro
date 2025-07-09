@@ -3,9 +3,10 @@ export interface Props {
   variant?: 'primary' | 'secondary';
   href?: string;
   class?: string;
+  external?: boolean;
 }
 
-const { variant = 'primary', href, class: className = '' } = Astro.props;
+const { variant = 'primary', href, class: className = '' , external} = Astro.props;
 
 const baseClasses = 'inline-flex items-center justify-center px-10 py-5 rounded-[22px] font-bold text-base transition-all duration-300';
 
@@ -19,6 +20,6 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag href={href} class={classes}>
+<Tag href={href} class={classes} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>
   <slot />
 </Tag>

@@ -5,10 +5,6 @@ pubDate: '04.Juni 2025'
 heroImage: '/src/assets/images/about/kind-beim-spielen.jpeg'
 ---
 
-# Freie Kita Plätze in Winterthur
-
-Suchen Sie einen Betreuungsplatz für Ihr Kind in Winterthur? Wir haben gute Nachrichten für Sie!
-
 ## Aktuelle Verfügbarkeit bei Kita Luftibus
 
 Die Kita Luftibus an der Rümikerstrasse 58 in Winterthur verfügt über freie Plätze und nimmt gerne neue Familien auf. Hier die aktuellen Verfügbarkeiten:
@@ -21,7 +17,7 @@ Die Kita Luftibus an der Rümikerstrasse 58 in Winterthur verfügt über freie P
 
 ### Altersgemischte Gruppe "Wirbelwind"
 
-- **Ab April 2025:** Vereinzelte Plätze auf Anfrage verfügbar
+- Ab April 2025: Vereinzelte Plätze auf Anfrage verfügbar
 - Für Kinder verschiedener Altersgruppen bis zum Kindergarteneintritt
 
 ## Warum Kita Luftibus die richtige Wahl ist
@@ -67,7 +63,6 @@ Winterthur erlebt derzeit eine besondere Situation mit Kitaschliessungen in der 
 - **Adresse:** Rümikerstrasse 58, 8409 Winterthur
 - **Telefon:** +41 52 223 13 24
 - **E-Mail:** info@kita-luftibus.ch
-- **Website:** [www.kita-luftibus.ch](http://www.kita-luftibus.ch)
 
 ## Warum jetzt handeln?
 

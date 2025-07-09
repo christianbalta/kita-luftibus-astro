@@ -32,18 +32,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           <p class="text-text-gray text-lg mb-8">
             {description}
           </p>
-
-          {heroImage && (
-              <div class="rounded-lg overflow-hidden shadow-lg">
-                <Image
-                    src={heroImage}
-                    alt={title}
-                    width="1000"
-                    height="500"
-                    class="w-full h-auto"
-                />
-              </div>
-          )}
         </div>
       </div>
 
@@ -64,7 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
         <div class="max-w-3xl mx-auto relative">
 
           <!-- Blog content -->
-          <article class="prose prose-lg max-w-none prose-headings:font-family-heading prose-headings:font-bold prose-headings:text-header-dark prose-p:text-text-gray prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+          <article class="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-headings:text-header-dark prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl prose-p:text-text-gray prose-p:leading-relaxed prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-header-dark prose-ul:text-text-gray prose-ol:text-text-gray prose-li:marker:text-primary">
             <slot />
           </article>
         </div>

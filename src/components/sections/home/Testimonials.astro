@@ -1,32 +1,29 @@
 ---
 import TestimonialCard from '../../cards/TestimonialCard.astro';
+import Button from "../../common/Button.astro";
 
 const testimonials = [
   {
-    quote: "Unser Sohn liebt es, jeden Tag in die Kita zu gehen. Das Team ist so herzlich und die skandinavische Pädagogik passt perfekt zu unseren Werten.",
-    family: "Familie Müller",
-    child: "Eltern von Luca (3 Jahre)",
+    quote: "Unsere Kinder gehen seit einiger Zeit in diese Kita und wir sind rundum zufrieden. Das Team ist sehr kompetent, herzlich und engagiert. Es wird viel mit den Kindern unternommen – drinnen wie draussen",
+    family: "Familie Balta",
     bgColor: "bg-header-dark",
     quoteColor: "text-primary"
   },
   {
-    quote: "Die Betreuung ist so liebevoll und professionell. Emma hat hier so viel gelernt und ist selbstbewusster geworden.",
-    family: "Familie Weber",
-    child: "Eltern von Emma (4 Jahre)",
+    quote: "Unser Sohn fühlt sich in der Kita Luftibus rundum wohl – und wir auch! Das Team ist herzlich, aufmerksam und geht liebevoll auf die Kinder ein. Besonders toll finden wir die abwechslungsreichen Ausflüge und Aktivitäten. ",
+    family: "Familie Çutuk",
     bgColor: "bg-secondary-teal",
     quoteColor: "text-white"
   },
   {
-    quote: "Wir sind so dankbar für die individuelle Betreuung und die wunderschöne Atmosphäre in der Kita Luftibus.",
-    family: "Familie Schmidt",
-    child: "Eltern von Noah (2 Jahre)",
+    quote: "Unser Sohn geht seit Januar in diese Kita. Es war unsere erste Trennung von ihm, aber von Anfang an hatten wir das Gefühl, dass er in guten Händen ist. Der Tagesablauf ist schön gestaltet, mit vielen tollen Aktivitäten.",
+    family: "Familie Negro",
     bgColor: "bg-primary",
     quoteColor: "text-white"
   },
   {
-    quote: "Das Outdoor-Konzept und die Naturverbundenheit machen den Unterschied. Sophie ist jeden Tag glücklich.",
-    family: "Familie Berger",
-    child: "Eltern von Sophie (5 Jahre)",
+    quote: "Eine ganz tolle Kita mit grossartigen und sehr gut qualifizierten Personal. Sie kümmern sich liebevoll um die Kinder, zeigen echtes Interesse an ihrer Entwicklung und schaffen eine warme, wertschätzende Atmosphäre.",
+    family: "Familie Concetta",
     bgColor: "bg-header-darker",
     quoteColor: "text-primary"
   }
@@ -45,10 +42,13 @@ const testimonials = [
       {testimonials.map(testimonial => <TestimonialCard
           quote={testimonial.quote}
           family={testimonial.family}
-          child={testimonial.child}
           bgColor={testimonial.bgColor}
           quoteColor={testimonial.quoteColor}
       />)}
+    </div>
+
+    <div class="text-center mt-16">
+      <Button href="https://maps.app.goo.gl/AUBB2rMFFN5XTU3B7" external={true}>Alle Bewertungen</Button>
     </div>
   </div>
 </section>

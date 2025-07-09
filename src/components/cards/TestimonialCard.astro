@@ -2,12 +2,11 @@
 export interface Props {
   quote: string;
   family: string;
-  child: string;
   bgColor: string;
   quoteColor: string;
 }
 
-const { quote, family, child, bgColor, quoteColor } = Astro.props;
+const { quote, family, bgColor, quoteColor } = Astro.props;
 const textColor = bgColor === 'bg-header-dark' || bgColor === 'bg-header-darker' ? 'text-text-light' : 'text-white';
 const avatarBg = bgColor === 'bg-secondary-teal' ? 'bg-white' : 'bg-primary';
 const avatarIcon = bgColor === 'bg-secondary-teal' ? 'text-secondary-teal' : 'text-white';
@@ -26,7 +25,6 @@ const avatarIcon = bgColor === 'bg-secondary-teal' ? 'text-secondary-teal' : 'te
     </div>
     <div>
       <p class="font-semibold">{family}</p>
-      <p class={`text-sm ${textColor === 'text-text-light' ? 'opacity-75' : 'opacity-75'}`}>{child}</p>
     </div>
   </div>
   <div class={`absolute -bottom-2 left-8 w-4 h-4 ${bgColor} transform rotate-45`}></div>
