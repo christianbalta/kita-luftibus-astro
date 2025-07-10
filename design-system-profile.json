@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "name": "Kita Luftibus Design System",
+    "description": "Scandinavian-inspired childcare center design system with warm, playful aesthetics",
+    "language": "de",
+    "framework": "Astro",
+    "cssFramework": "TailwindCSS 4.x",
+    "target": "Childcare/Educational Services",
+    "style": "Scandinavian, Warm, Playful, Child-Friendly"
+  },
+  "brandIdentity": {
+    "name": "Kita Luftibus",
+    "tagline": "Skandinavische Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur",
+    "personality": ["warm", "nurturing", "playful", "professional", "trustworthy"],
+    "tone": "friendly, approachable, caring, educational"
+  },
+  "colorPalette": {
+    "primary": {
+      "main": "#F39F5F",
+      "dark": "#E58A44",
+      "light": "#F5B07A",
+      "usage": "Primary actions, accents, highlights"
+    },
+    "secondary": {
+      "teal": "#70A6B1",
+      "yellow": "#F5C748",
+      "usage": "Secondary accents, decorative elements"
+    },
+    "neutrals": {
+      "headerDark": "#385469",
+      "headerDarker": "#142D40",
+      "textGray": "#5C707E",
+      "textLight": "#ffffffcc",
+      "borderLight": "#E5E5E5",
+      "usage": "Text, headers, borders"
+    },
+    "backgrounds": {
+      "cream": "#F4EEE5",
+      "lightBlue": "#EFF5F6",
+      "usage": "Section backgrounds, cards"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "heading": {
+        "family": "Quicksand",
+        "fallback": "sans-serif",
+        "weights": [300, 400, 500, 600, 700],
+        "usage": "Headings, brand text"
+      },
+      "body": {
+        "family": "Quicksand",
+        "fallback": "sans-serif",
+        "weights": [300, 400, 500, 600, 700],
+        "usage": "Body text, paragraphs"
+      },
+      "accent": {
+        "family": "Pangolin",
+        "fallback": "cursive",
+        "usage": "Decorative text, playful elements"
+      }
+    },
+    "scale": {
+      "hero": "text-4xl lg:text-7xl",
+      "h1": "text-3xl lg:text-5xl",
+      "h2": "text-2xl lg:text-4xl",
+      "h3": "text-xl lg:text-2xl",
+      "h4": "text-lg lg:text-xl",
+      "body": "text-base lg:text-lg",
+      "small": "text-sm"
+    },
+    "weights": {
+      "light": "font-light",
+      "regular": "font-normal",
+      "medium": "font-medium",
+      "semibold": "font-semibold",
+      "bold": "font-bold"
+    }
+  },
+  "spacing": {
+    "sections": {
+      "small": "py-12",
+      "medium": "py-16 lg:py-20",
+      "large": "py-20 lg:py-32"
+    },
+    "containers": {
+      "default": "container mx-auto px-4",
+      "padding": "px-4 lg:px-8"
+    },
+    "components": {
+      "card": "p-6 lg:p-8",
+      "button": "px-10 py-5",
+      "grid": "gap-6 lg:gap-8 xl:gap-12"
+    }
+  },
+  "layout": {
+    "grid": {
+      "breakpoints": {
+        "sm": "640px",
+        "md": "768px",
+        "lg": "1024px",
+        "xl": "1280px"
+      },
+      "patterns": {
+        "twoColumn": "grid-cols-1 lg:grid-cols-2",
+        "threeColumn": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+        "fourColumn": "grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+      }
+    },
+    "containers": {
+      "maxWidth": "container mx-auto",
+      "padding": "px-4"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "classes": "inline-flex items-center justify-center px-10 py-5 rounded-[22px] font-bold text-base bg-primary text-white hover:bg-opacity-90 hover:translate-y-[-2px] hover:shadow-lg transition-all duration-300",
+        "usage": "Primary actions, CTAs"
+      },
+      "secondary": {
+        "classes": "inline-flex items-center justify-center px-10 py-5 rounded-[22px] font-bold text-base bg-transparent border border-primary text-primary hover:bg-primary hover:text-white hover:translate-y-[-2px] transition-all duration-300",
+        "usage": "Secondary actions"
+      }
+    },
+    "cards": {
+      "team": {
+        "structure": "Image + Name + Role + Description",
+        "classes": "rounded-2xl shadow",
+        "imageClasses": "w-full h-full object-cover rounded-2xl",
+        "titleClasses": "font-heading font-semibold text-xl text-header-dark",
+        "roleClasses": "text-primary font-semibold",
+        "descriptionClasses": "text-text-gray text-sm"
+      },
+      "testimonial": {
+        "structure": "Quote + Avatar + Name + Background Color",
+        "classes": "p-8 rounded-2xl relative transform transition-transform duration-300 hover:-translate-y-1",
+        "quoteClasses": "leading-relaxed",
+        "avatarClasses": "w-10 h-10 rounded-full flex items-center justify-center",
+        "decorativeElement": "absolute -bottom-2 left-8 w-4 h-4 transform rotate-45"
+      }
+    },
+    "navigation": {
+      "header": {
+        "classes": "bg-background-cream sticky top-0 z-50",
+        "container": "container mx-auto px-4 py-4",
+        "logoClasses": "h-20 w-auto",
+        "linkClasses": "text-text-gray hover:text-primary transition-colors",
+        "dropdownClasses": "absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md overflow-hidden z-50 transform scale-0 group-hover:scale-100 transition-transform origin-top duration-200"
+      },
+      "footer": {
+        "classes": "bg-background-cream py-20",
+        "gridClasses": "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+      }
+    },
+    "floatingElements": {
+      "phoneButton": {
+        "classes": "fixed bottom-8 right-8 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer z-40",
+        "iconClasses": "fas fa-phone text-white text-xl"
+      }
+    }
+  },
+  "animations": {
+    "float": {
+      "name": "float",
+      "duration": "3s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": {
+        "0%": "translateY(0px)",
+        "50%": "translateY(-10px)",
+        "100%": "translateY(0px)"
+      }
+    },
+    "hover": {
+      "translateUp": "hover:translate-y-[-2px]",
+      "scaleUp": "hover:scale-105",
+      "shadow": "hover:shadow-lg"
+    },
+    "transitions": {
+      "default": "transition-all duration-300",
+      "colors": "transition-colors",
+      "transform": "transition-transform duration-300"
+    }
+  },
+  "decorativeElements": {
+    "shapes": {
+      "circles": {
+        "small": "w-6 h-6 rounded-full opacity-60",
+        "medium": "w-10 h-10 rounded-full opacity-60",
+        "large": "w-12 h-12 rounded-full opacity-60"
+      },
+      "positioning": "absolute positioning with top/left/right/bottom values",
+      "colors": ["bg-secondary-teal", "bg-secondary-yellow", "bg-primary"]
+    },
+    "illustrations": {
+      "usage": "Floating animated elements (hot air balloon, bee)",
+      "animation": "animate-float with delays",
+      "responsive": "hidden md:block for mobile optimization"
+    }
+  },
+  "accessibility": {
+    "features": [
+      "Semantic HTML structure",
+      "Alt text for images",
+      "Focus states on interactive elements",
+      "Color contrast compliance",
+      "Keyboard navigation support"
+    ],
+    "links": {
+      "external": "target='_blank' rel='noopener noreferrer'"
+    }
+  },
+  "responsiveDesign": {
+    "approach": "Mobile-first",
+    "breakpoints": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px"
+    },
+    "patterns": {
+      "hideOnMobile": "hidden md:block",
+      "showOnMobile": "block md:hidden",
+      "responsiveGrid": "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+      "responsiveText": "text-base lg:text-lg",
+      "responsiveSpacing": "py-12 lg:py-20"
+    }
+  },
+  "iconography": {
+    "library": "Font Awesome 6.0.0",
+    "usage": [
+      "fas fa-phone - Contact/phone icons",
+      "fas fa-envelope - Email icons",
+      "fas fa-map-marker-alt - Location icons",
+      "fas fa-quote-left - Testimonial quotes",
+      "fas fa-user - User avatars",
+      "fas fa-bars - Mobile menu",
+      "fas fa-chevron-down - Dropdown arrows",
+      "fab fa-instagram - Social media"
+    ]
+  },
+  "contentPatterns": {
+    "hero": {
+      "structure": "Large heading + Subtext + CTA button + Hero image",
+      "layout": "Two-column grid on desktop",
+      "decorativeElements": "Floating shapes and illustrations"
+    },
+    "sections": {
+      "about": "Text content + highlights + key facts",
+      "team": "Grid of team member cards",
+      "testimonials": "Grid of testimonial cards with varied colors",
+      "contact": "Contact info + opening hours + certifications"
+    }
+  },
+  "technicalImplementation": {
+    "framework": "Astro 5.11.0",
+    "styling": "TailwindCSS 4.x with Vite integration",
+    "typescript": "TypeScript for configuration and type safety",
+    "contentManagement": "Astro Content Collections API",
+    "imageOptimization": "Astro Image component",
+    "navigation": "Centralized navigation configuration",
+    "customScrollbar": "Styled webkit scrollbar matching brand colors"
+  },
+  "usageGuidelines": {
+    "doAndDont": {
+      "do": [
+        "Use warm, rounded shapes",
+        "Maintain consistent spacing patterns",
+        "Apply hover effects for interactivity",
+        "Use decorative elements sparingly",
+        "Ensure mobile responsiveness",
+        "Follow semantic HTML structure"
+      ],
+      "dont": [
+        "Use harsh angles or sharp edges",
+        "Overcrowd with decorative elements",
+        "Ignore mobile experience",
+        "Use colors outside the defined palette",
+        "Neglect accessibility features"
+      ]
+    },
+    "extensionPatterns": {
+      "newPages": "Follow existing layout patterns with Header + Main Content + Footer",
+      "newComponents": "Use established card patterns and color schemes",
+      "newSections": "Apply consistent spacing and grid layouts"
+    }
+  }
+}

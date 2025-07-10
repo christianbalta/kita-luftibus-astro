@@ -1,0 +1,309 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/layout/TopBar.astro'
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import MobileMenu from '../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bus from '../assets/images/decoration/bus.png';
+import regenbogen from '../assets/images/decoration/frame.png';
+import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
+import topShape from '../assets/images/backgrounds/section-top-shape.png';
+import giraffe from '../assets/images/decoration/giraffe.png';
+import pencil from '../assets/images/decoration/pencil.png';
+import kindBeimSpielen from '../assets/images/about/kind-beim-spielen.jpeg';
+
+const conceptPillars = [
+  {
+    icon: 'handshake',
+    title: 'Zusammenarbeit mit Eltern',
+    description: 'Wir arbeiten mit den Eltern unserer Kinder eng zusammen und tauschen uns laufend aus. In einem «Bildungsvertrag» halten wir gemeinsam fest, was Ihnen und uns besonders am Herzen liegt.'
+  },
+  {
+    icon: 'users',
+    title: 'Soziale Entwicklung',
+    description: 'Kinder brauchen für ihre Entwicklung andere Kinder und Erwachsene. Das Kind entwickelt sich in der Spanne zwischen Individualität und Gruppe. Wir fördern gegenseitige Hilfe und Rücksichtsnahme.'
+  },
+  {
+    icon: 'seedling',
+    title: 'Individuelle Entwicklung',
+    description: 'Jedes Kind trägt seine persönliche Entwicklungsuhr in sich. Durch kontinuierliche Beobachtung des Kindes erkennen wir, wie es lernt und können es individuell beim Lernen unterstützen.'
+  },
+  {
+    icon: 'lightbulb',
+    title: 'Lernwerkstatt',
+    description: 'Um die Neugier zu wecken und aufrecht zu erhalten, dürfen die Kinder bei uns in der Lernwerkstatt verschiedene Materialien aus dem Alltag entdecken und experimentieren.'
+  }
+];
+
+const dailyStructure = [
+  {
+    icon: 'clock',
+    title: 'Strukturierter Tagesablauf',
+    description: 'Ein strukturierter Tagesablauf mit gemeinsamen und individuellen Aktivitäten gibt Sicherheit und Freiraum.'
+  },
+  {
+    icon: 'music',
+    title: 'Rhythmik und Singen',
+    description: 'Rhythmik – zum Teil mit selbst gebastelten Musikinstrumenten – und Singen sind fester Bestandteil unseres Tagesablaufs. Wir singen in Mundart, Hochdeutsch und anderen Sprachen.'
+  },
+  {
+    icon: 'walking',
+    title: 'Bewegung und Natur',
+    description: 'Auch die Bewegung ist uns wichtig. Ein Spaziergang an der frischen Luft steht täglich auf dem Programm. Dabei sammeln wir Materialien für das Freispiel.'
+  },
+  {
+    icon: 'calendar-check',
+    title: 'Feste und Feiern',
+    description: 'Wir feiern mehrere Feste im Jahr und werden dabei von den Eltern unserer Kinder sehr unterstützt.'
+  }
+];
+---
+
+<Layout title="Pädagogisches Konzept - Kita Luftibus Winterthur" description="Erfahren Sie mehr über unser pädagogisches Konzept: individuelle Förderung, Lernwerkstatt und strukturierter Tagesablauf für die optimale Entwicklung Ihres Kindes.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <!-- Floating decorative images - hidden on mobile -->
+      <div class="absolute top-8 left-8 animate-float hidden md:block">
+        <Image
+          src={bus}
+          alt="Bus Dekoration"
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="absolute bottom-8 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
+        <Image
+          src={regenbogen}
+          alt="Regenbogen Dekoration"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            Pädagogisches <span class="text-primary">Konzept</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Was uns bewegt - unser Ansatz zur individuellen Förderung und ganzheitlichen Entwicklung der Kinder
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Was uns bewegt Section -->
+    <section class="py-20 lg:py-32 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+            Was uns <span class="text-primary">bewegt</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {conceptPillars.map(pillar => (
+            <div class="bg-white rounded-2xl p-8 shadow-default">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <i class={`fas fa-${pillar.icon} text-primary text-xl`}></i>
+                </div>
+                <div>
+                  <h3 class="font-heading font-semibold text-xl text-header-dark mb-2">{pillar.title}</h3>
+                  <p class="text-text-gray leading-relaxed">{pillar.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Unser Ansatz Section -->
+    <section class="py-20 bg-background-cream relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0">
+        <Image
+            src={topShape}
+            alt="Top shape"
+        />
+      </div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute top-16 left-8 animate-float hidden lg:block">
+        <Image
+          src={pencil}
+          alt="Pencil decoration"
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="absolute bottom-16 right-8 animate-float hidden lg:block" style="animation-delay: 1s;">
+        <Image
+          src={giraffe}
+          alt="Giraffe decoration"
+          class="w-full h-auto"
+        />
+      </div>
+      
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+            Unser <span class="text-primary">Ansatz</span>
+          </h2>
+        </div>
+
+        <!-- Main Content Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <!-- Image Side -->
+          <div class="relative">
+            <div class="relative">
+              <!-- Organic shape background -->
+              <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-200/30 rounded-[60px] transform rotate-3"></div>
+              <div class="relative bg-white rounded-[50px] p-8 shadow-lg">
+                <Image
+                  src={kindBeimSpielen}
+                  alt="Kinder beim Spielen in der Kita"
+                  class="w-full h-80 object-cover rounded-[40px]"
+                />
+              </div>
+            </div>
+          </div>
+          
+          <!-- Content Side -->
+          <div class="space-y-8">
+            <div>
+              <h3 class="font-heading font-semibold text-2xl lg:text-3xl text-header-dark mb-4">
+                Unser Ziel: Das Wohl Ihres Kindes
+              </h3>
+              <p class="text-text-gray text-lg leading-relaxed">
+                Ziel ist es, dass sich Ihr Kind in unserer Kita wohlfühlt und wir es bestmöglich fördern, ihm Impulse geben können. Wir sind kompetente Ansprechpartner, wenn Sie Fragen zur Erziehung oder zu den Entwicklungsphasen der Kinder haben.
+              </p>
+            </div>
+            
+            <!-- Feature Grid -->
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-child text-yellow-600 text-2xl"></i>
+                </div>
+                <h4 class="font-heading font-semibold text-lg text-header-dark mb-2">Individuelle Förderung</h4>
+                <p class="text-text-gray text-sm leading-relaxed">
+                  Jedes Kind auf ganz individuelle Art beim Lernen unterstützen
+                </p>
+              </div>
+              
+              <div class="text-center">
+                <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-users text-blue-600 text-2xl"></i>
+                </div>
+                <h4 class="font-heading font-semibold text-lg text-header-dark mb-2">Gemeinschaftssinn</h4>
+                <p class="text-text-gray text-sm leading-relaxed">
+                  Förderung von Verantwortung für sich und die Umwelt
+                </p>
+              </div>
+              
+              <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-lightbulb text-green-600 text-2xl"></i>
+                </div>
+                <h4 class="font-heading font-semibold text-lg text-header-dark mb-2">Lernumgebung</h4>
+                <p class="text-text-gray text-sm leading-relaxed">
+                  Offenheit für Neues und lebenslange Lernbereitschaft
+                </p>
+              </div>
+              
+              <div class="text-center">
+                <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                  <i class="fas fa-star text-purple-600 text-2xl"></i>
+                </div>
+                <h4 class="font-heading font-semibold text-lg text-header-dark mb-2">Potentiale entfalten</h4>
+                <p class="text-text-gray text-sm leading-relaxed">
+                  Vielfältige Anregungen zur Entfaltung der Anlagen
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Content -->
+        <div class="max-w-4xl mx-auto">
+          <div class="p-8 lg:p-12">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-6 text-center">
+              Unsere pädagogischen Grundsätze
+            </h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-heart text-primary text-sm"></i>
+                </div>
+                <p class="text-text-gray leading-relaxed">
+                  <strong>Lebensbejahende Persönlichkeit:</strong> Ziel ist die Entfaltung einer selbstständigen «kleinen Persönlichkeit», die erkennt, was sie schon selbst geschafft hat und die zuversichtlich in die Zukunft sieht.
+                </p>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-leaf text-green-600 text-sm"></i>
+                </div>
+                <p class="text-text-gray leading-relaxed">
+                  <strong>Naturbezug:</strong> Wo immer möglich schaffen wir einen direkten Bezug zwischen Lernumgebung und Umwelt. Auf Spaziergängen sammeln wir zum Beispiel Herbstblätter für das Freispiel.
+                </p>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-puzzle-piece text-blue-600 text-sm"></i>
+                </div>
+                <p class="text-text-gray leading-relaxed">
+                  <strong>Selbstständigkeit:</strong> Zur Förderung der Selbstständigkeit und Selbsttätigkeit räumen wir genügend Zeit für individuelles Spielen ein. Kinder bringen von Anfang an grosse Potentiale mit.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tagesablauf Section -->
+    <section class="py-20 bg-background-light">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+            Strukturierter <span class="text-primary">Tagesablauf</span>
+          </h2>
+          <p class="text-text-gray text-lg max-w-3xl mx-auto">
+            Dabei fördern wir die sprachlichen, kognitiven, sozialen und motorischen Fähigkeiten, abgestimmt auf die Bedürfnisse der Kinder.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {dailyStructure.map(item => (
+            <div class="bg-white rounded-2xl p-8 shadow-default">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                  <i class={`fas fa-${item.icon} text-primary text-xl`}></i>
+                </div>
+                <div>
+                  <h3 class="font-heading font-semibold text-xl text-header-dark mb-2">{item.title}</h3>
+                  <p class="text-text-gray leading-relaxed">{item.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
