@@ -1,0 +1,110 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/layout/TopBar.astro'
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import MobileMenu from '../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
+---
+
+<Layout title="Tarife und Infos - Kita Luftibus Winterthur" description="Informationen zu unseren Tarifen für Säuglinge und Kinder sowie zu subventionierten Plätzen in der Kita Luftibus Winterthur.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            Tarife und <span class="text-primary">Infos</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Hier finden Sie alle Informationen zu unseren Tarifen für Säuglinge und Kinder sowie zu subventionierten Plätzen.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Säuglinge Section -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
+              <span class="text-primary">Tarife</span>
+            </h2>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-12">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Säuglinge</h3>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Säuglinge bis 18 Monat CHF. 125.- pro Tag
+            </p>
+            
+            <h4 class="font-heading font-semibold text-xl text-header-dark mb-3">
+              Monatspauschale für Säuglinge bis 18 Monate (Geschwisterrabatt 10%)*:
+            </h4>
+            
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-text-gray">
+              <li>1 Tag pro Woche CHF 531.25</li>
+              <li>2 Tage pro Woche CHF 1062.50</li>
+              <li>3 Tage pro Woche CHF 1593.75</li>
+              <li>4 Tage pro Woche CHF 2125.-</li>
+              <li>5 Tage pro Woche CHF 2'656.25</li>
+            </ul>
+            
+            <p class="text-text-gray leading-relaxed mb-4">
+              Gemüse-und Früchtebreie werden frisch in der Kita hergestellt und sind im Betreuungsbetrag enthalten. Beginnt der Säugling mit Mischkost, ist die Verpflegung ebenfalls inklusive (ausgenommen sind Schoppen oder spezielle Kost bei Nahrungsmittelunverträglichkeiten).
+            </p>
+            
+            <p class="text-text-gray leading-relaxed italic">
+              *die Berechnung basiert auf 4.25 Wochentagen pro Monat, siehe Beitragsreglement der Stadt Winterthur.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-12">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Kinder ab 18 Monate</h3>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Kinder ab 18 Monate CHF 113.- pro Tag
+            </p>
+            
+            <h4 class="font-heading font-semibold text-xl text-header-dark mb-3">
+              Monatspauschale für Kinder ab 18 Monate (Geschwisterrabatt 10%)*:
+            </h4>
+            
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-text-gray">
+              <li>1 Tag pro Woche CHF 480.25</li>
+              <li>2 Tage pro Woche CHF 960.-</li>
+              <li>3 Tage pro Woche CHF 1440.75</li>
+              <li>4 Tage pro Woche CHF 1921.-</li>
+              <li>5 Tage pro Woche CHF 2401.25</li>
+            </ul>
+            
+            <p class="text-text-gray leading-relaxed italic">
+              *die Berechnung basiert auf 4.25 Wochentagen pro Monat, siehe Beitragsreglement der Stadt Winterthur.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-default">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Subventionierte Plätze</h3>
+            <p class="text-text-gray leading-relaxed">
+              Anspruch auf einen subventionierten Platz haben Eltern mit Wohnsitz in der Stadt Winterthur und einem steuerbaren Einkommen von weniger als Fr. 105'001 zuzüglich 10% Vermögen. Eine weitere Bedingung ist ein Arbeitspensum von 120%, d.h., dass beide Elternteile arbeiten müssen. Weitere Informationen zu subventionierten Plätzen finden Sie auf der Website der Stadt Winterthur. Wir informieren Sie auch gerne individuell beim Besuch unserer Kita.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,285 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/layout/TopBar.astro'
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import MobileMenu from '../../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bus from '../../assets/images/decoration/bus.png';
+import regenbogen from '../../assets/images/decoration/frame.png';
+import bottomShape from '../../assets/images/backgrounds/bottom-shape.png';
+import topShape from '../../assets/images/backgrounds/section-top-shape.png';
+import giraffe from '../../assets/images/decoration/giraffe.png';
+import pencil from '../../assets/images/decoration/pencil.png';
+
+// Bewegung im Freien Images
+import kindKlettertStufen from '../../assets/images/paedagogisches-konzept/portfolio-konzept/bewegung-im-freien/Kind-klettert-stufen-hoch.jpeg';
+import kindKriechtRoehre from '../../assets/images/paedagogisches-konzept/portfolio-konzept/bewegung-im-freien/kind-kriecht-druch-roehre.jpg';
+import kinderSpielenBaumstamm from '../../assets/images/paedagogisches-konzept/portfolio-konzept/bewegung-im-freien/Kinder-spielen-am-baumstamm.jpg';
+import kindBeimSpielen from '../../assets/images/paedagogisches-konzept/portfolio-konzept/bewegung-im-freien/Portfolio-Konzept-Kind-beim-spielen.jpg';
+
+// Entdecken und erleben Images
+import kindBasteltKarten from '../../assets/images/paedagogisches-konzept/portfolio-konzept/entdecken-und-erleben/Kind-bastelt-karten.jpg';
+import kindMalt from '../../assets/images/paedagogisches-konzept/portfolio-konzept/entdecken-und-erleben/Kind-malt--kita-luftibus.jpg';
+import kinderSpielenDraussen from '../../assets/images/paedagogisches-konzept/portfolio-konzept/entdecken-und-erleben/Kinder-spielen-draussen.jpeg';
+import trainingFeinmotorik from '../../assets/images/paedagogisches-konzept/portfolio-konzept/entdecken-und-erleben/training-der-feinmotorik-mit-nudeln.jpg';
+
+// Alltag nachahmen Images
+import kindMitBaby from '../../assets/images/paedagogisches-konzept/portfolio-konzept/alltag-nachahmen/Kind-beim-altag-nachahmen-mit-baby.jpeg';
+import kindKocht from '../../assets/images/paedagogisches-konzept/portfolio-konzept/alltag-nachahmen/kind-kocht-in-der-kueche.jpg';
+import schneidenGemuese from '../../assets/images/paedagogisches-konzept/portfolio-konzept/alltag-nachahmen/schneiden-von-spiel-gemüse.jpg';
+
+// Musizieren Images
+import kindMusizieren from '../../assets/images/paedagogisches-konzept/portfolio-konzept/musizieren/kind-beim-musizieren.jpeg';
+---
+
+<Layout title="Portfolio-Konzept in Bildern - Pädagogisches Konzept - Kita Luftibus Winterthur" description="Entdecken Sie unser Portfolio-Konzept in Bildern: Bewegung im Freien, Entdecken und Erleben, Alltag nachahmen und Musizieren - Einblicke in den Kita-Alltag.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <!-- Floating decorative images - hidden on mobile -->
+      <div class="absolute top-8 left-8 animate-float hidden md:block">
+        <Image
+          src={bus}
+          alt="Bus Dekoration"
+          class="w-full h-auto"
+        />
+      </div>
+      <div class="absolute bottom-8 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
+        <Image
+          src={regenbogen}
+          alt="Regenbogen Dekoration"
+          class="w-full h-auto"
+        />
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            Portfolio-Konzept in <span class="text-primary">Bildern</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Bei uns kann sich Ihr Kind individuell entfalten. Ziel ist es, dass sich Ihr Kind in unserer Kita wohlfühlt und wir es bestmöglich fördern, ihm Impulse geben können. (Fotos werden laufend aktualisiert)
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Bewegung im Freien Section -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-heading font-bold text-3xl lg:text-4xl text-header-dark mb-4">
+            Bewegung im <span class="text-primary">Freien</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <!-- Image 1 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindKlettertStufen}
+                alt="Kind klettert Stufen hoch"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindKriechtRoehre}
+                alt="Kind kriecht durch Röhre"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kinderSpielenBaumstamm}
+                alt="Kinder spielen am Baumstamm"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindBeimSpielen}
+                alt="Kind beim Spielen"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entdecken und erleben Section -->
+    <section class="py-20 bg-background-cream relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0">
+        <Image
+            src={topShape}
+            alt="Top shape"
+        />
+      </div>
+
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-heading font-bold text-3xl lg:text-4xl text-header-dark mb-4">
+            Entdecken und erleben <span class="text-primary">alleine oder mit dem Spielpartner</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <!-- Image 1 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindBasteltKarten}
+                alt="Kind bastelt Karten"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindMalt}
+                alt="Kind malt Kita Luftibus"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kinderSpielenDraussen}
+                alt="Kinder spielen draussen"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 4 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={trainingFeinmotorik}
+                alt="Training der Feinmotorik mit Nudeln"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alltag nachahmen Section -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-heading font-bold text-3xl lg:text-4xl text-header-dark mb-4">
+            Alltag <span class="text-primary">nachahmen</span>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <!-- Image 1 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindMitBaby}
+                alt="Kind beim Alltag nachahmen mit Baby"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={kindKocht}
+                alt="Kind kocht in der Küche"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+
+          <!-- Image 3 -->
+          <div>
+            <div class="relative mb-4">
+              <Image
+                src={schneidenGemuese}
+                alt="Schneiden von Spiel-Gemüse"
+                width={400}
+                height={533}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Musizieren Section -->
+    <section class="py-20 bg-background-cream relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="font-heading font-bold text-3xl lg:text-4xl text-header-dark mb-4">
+            Musizieren
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-1 gap-8 mb-16">
+          <!-- Image 1 -->
+          <div>
+            <div class="relative mb-4">
+                <Image
+                    src={kindMusizieren}
+                    alt="Kind beim Musizieren"
+                    width={400}
+                    height={533}
+                />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
