@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/layout/TopBar.astro'
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import MobileMenu from '../../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+import Button from '../../components/common/Button.astro';
+
+import bottomShape from '../../assets/images/backgrounds/bottom-shape.png';
+---
+
+<Layout title="Öffnungszeiten - Kita Luftibus Winterthur" description="Informationen zu den Öffnungszeiten der Kita Luftibus Winterthur sowie zu Feiertagen und Schliessungszeiten.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            <span class="text-primary">Öffnungszeiten</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Hier finden Sie alle Informationen zu unseren Öffnungszeiten und Schliessungstagen.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Öffnungszeiten Section -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl p-5 shadow-default">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Reguläre Öffnungszeiten</h3>
+            <p class="text-text-gray leading-relaxed mb-6">
+              Die «Kita Luftibus» ist von Montag bis Freitag von 7.00 Uhr bis 18.15 Uhr geöffnet. Von 12.30 Uhr bis 14.00 Uhr ist bei uns Mittagsruhe, während der die Kinder schlafen. Deshalb werden in dieser Zeit keine Kinder abgeholt oder gebracht. Am Morgen muss Ihr Kind bis spätestens um 8.50 Uhr anwesend sein, damit es an allen Aktivitäten teilnehmen kann und ein möglichst ungestörter Ablauf für die ganze Gruppe gewährleistet ist.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-default">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Schliessungstage</h3>
+            <p class="text-text-gray leading-relaxed mb-4">
+              An folgenden Tagen ist die Kita geschlossen:
+            </p>
+
+            <ul class="list-disc pl-6 mb-6 space-y-2 text-text-gray">
+              <li>Fasnachtsmontag</li>
+              <li>Karfreitag</li>
+              <li>Ostermontag</li>
+              <li>1. Mai</li>
+              <li>Auffahrt mit nachfolgendem Freitag</li>
+              <li>Pfingstmontag</li>
+              <li>1. August</li>
+              <li>24. Dezember und 1-2 Wochen über Weihnachten/Neujahr (bitte Aushänge in der Kita beachten)</li>
+            </ul>
+
+            <p class="text-text-gray leading-relaxed mb-4">
+              Am Tag vor einem Feiertag schliesst die Kindertagesstätte um 16.00 Uhr oder 17.00 Uhr
+            </p>
+
+            <p class="text-text-gray leading-relaxed mb-4">
+              Ferien sind uns möglichst früh bekannt zu geben, mindestens zwei Wochen vorher.
+            </p>
+          </div>
+
+
+            <div class="bg-white rounded-2xl p-5 shadow-default">
+              <h3 class="font-heading font-semibold text-2xl text-header-dark mb-6">Ferienliste 2025/2026</h3>
+              <p class="text-text-gray mb-8">
+                Hier können Sie unsere aktuelle Ferienliste für das Jahr 2025/2026 herunterladen.
+              </p>
+              <Button href="/Ferienliste-20252026.pdf" variant="primary" external={true}>
+                <i class="fas fa-download"></i>Ferienliste herunterladen
+              </Button>
+            </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Ferienliste Section -->
+    <section class="bg-background-light relative overflow-hidden">
+
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

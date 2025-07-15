@@ -12,11 +12,13 @@ const navItems = getMainNavItems();
   <div class="container mx-auto px-4 py-4">
     <nav class="flex items-center justify-between">
       <div class="flex items-center">
+        <a href="/">
         <Image
           src={logo}
           alt="Kita Luftibus logo"
           class="h-20 w-auto"
         />
+        </a>
       </div>
 
       <div class="hidden md:flex items-center space-x-8">
@@ -59,7 +61,7 @@ const navItems = getMainNavItems();
       </div>
 
       <div class="hidden md:block">
-        <Button href="/verfuegbare-plaetze-anmeldung">Anmeldung</Button>
+        <Button href="/verfuegbare-plaetze-und-anmeldung">Anmeldung</Button>
       </div>
 
       <button id="mobile-menu-toggle" class="md:hidden text-header-dark">

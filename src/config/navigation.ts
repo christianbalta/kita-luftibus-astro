@@ -61,7 +61,7 @@ export const sitemap: SiteMap = {
     },
     available_places_and_registration: {
       title: "Verfügbare Plätze & Anmeldung",
-      url: "/verfuegbare-plaetze-anmeldung"
+      url: "/verfuegbare-plaetze-und-anmeldung",
     },
     weekly_menu_plan: {
       title: "Menü",

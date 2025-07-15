@@ -17,15 +17,17 @@ const contactInfo = {
 
 <div id="mobile-menu"
      class="fixed inset-0 z-50 bg-background-cream transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-  <div class="flex flex-col h-full">
+  <div class="flex flex-col h-full overflow-y-auto">
     <!-- Header -->
     <div class="flex items-center justify-between p-4">
       <div class="flex items-center">
-        <Image
-            src={logo}
-            alt="Kita Luftibus"
-            class="h-20 w-auto"
-        />
+        <a href="/">
+          <Image
+              src={logo}
+              alt="Kita Luftibus"
+              class="h-20 w-auto"
+          />
+        </a>
       </div>
       <button id="mobile-menu-close"
               class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
@@ -34,7 +36,7 @@ const contactInfo = {
     </div>
 
     <!-- Navigation -->
-    <nav class="flex-1 px-4 py-6 overflow-y-auto">
+    <nav class="flex-1 px-4 py-6">
       <ul class="space-y-6">
         {navItems.map(item => (
             <li>
@@ -95,7 +97,7 @@ const contactInfo = {
         </div>
       </div>
 
-      <Button href="/verfuegbare-plaetze-anmeldung" class="w-full mb-6">
+      <Button href="/verfuegbare-plaetze-und-anmeldung" class="w-full mb-6">
         Anmeldung <i class="fas fa-arrow-right ml-2"></i>
       </Button>
 
