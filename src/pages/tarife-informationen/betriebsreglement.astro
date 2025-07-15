@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/layout/TopBar.astro'
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import MobileMenu from '../../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+import Button from '../../components/common/Button.astro';
+
+import bottomShape from '../../assets/images/backgrounds/bottom-shape.png';
+---
+
+<Layout title="Betriebsreglement - Kita Luftibus Winterthur" description="Das Betriebsreglement der Kita Luftibus informiert über Grundsätze, Öffnungszeiten, Tagesablauf, Eingewöhnung, Tarife und Betreuungsvertrag.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            <span class="text-primary">Betriebsreglement</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Alle wichtigen Informationen über die Kita Luftibus im Überblick.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl p-5 shadow-default">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-6">Über das Betriebsreglement</h2>
+            <p class="text-text-gray leading-relaxed mb-8">
+              Das Betriebsreglement informiert ausführlich über die Kindertagesstätte «Kita Luftibus». Es orientiert interessierte Eltern über Grundsätze, Öffnungszeiten, Tagesablauf und Eingewöhnung. Ausserdem finden Sie hier alle Einzelheiten zu den Tarifen und zum Betreuungsvertrag.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-5 shadow-default">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-6">Dokumente</h2>
+            
+            <div class="space-y-6">
+              <div>
+                <h3 class="font-heading font-semibold text-lg text-header-dark mb-3">Betriebsreglement</h3>
+                <p class="text-text-gray mb-4">
+                  Das aktuelle Betriebsreglement mit allen wichtigen Informationen zur Kita Luftibus.
+                </p>
+                <Button href="/2023-Betriebsreglement-ab-Juni.pdf" variant="primary" external={true}>
+                  <i class="fas fa-download"></i>Betriebsreglement herunterladen
+                </Button>
+              </div>
+
+              <div>
+                <h3 class="font-heading font-semibold text-lg text-header-dark mb-3">Eingewöhnung</h3>
+                <p class="text-text-gray mb-4">
+                  Merkblatt mit wichtigen Informationen zur Eingewöhnungszeit in der Kita.
+                </p>
+                <Button href="/Eingewoehnung-merkblatt.pdf" variant="primary" external={true}>
+                  <i class="fas fa-download"></i>Eingewöhnungs-Merkblatt herunterladen
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

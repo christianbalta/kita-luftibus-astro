@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/layout/TopBar.astro'
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import MobileMenu from '../../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+import Button from '../../components/common/Button.astro';
+
+import bottomShape from '../../assets/images/backgrounds/bottom-shape.png';
+---
+
+<Layout title="Wissenswertes für Eltern - Kita Luftibus Winterthur" description="Nützliche Informationen und Links für Eltern der Kita Luftibus Winterthur.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            Wissenswertes <span class="text-primary">für Eltern</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Hier finden Sie nützliche Informationen und Links für Eltern.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl p-8 shadow-default">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-6">Informationen zur Eingewöhnung</h2>
+            <ul class="list-disc pl-6 mb-8 space-y-2">
+              <li>
+                <a href="/Kindereingewoehnung.pdf" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover underline">
+                  Informationen zur Eingewöhnungszeit (PDF)
+                </a>
+              </li>
+            </ul>
+
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-6">Nützliche Links</h2>
+            
+            <div class="space-y-6">
+              <ul class="list-disc pl-6 space-y-2">
+                <li>
+                  <a href="https://stadt.winterthur.ch/themen/leben-in-winterthur/kinder-jugendliche-und-familien/kinderbetreuung/reglemente-formulare-merkblaetter" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover underline">
+                    Stadt Winterthur - Kinderbetreuung Reglemente und Merkblätter
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.swissmom.ch" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover underline">
+                    Swissmom
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.swiss-paediatrics.org/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover underline">
+                    Schweizerische Gesellschaft für Pädiatrie
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.liliput.ch/" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-primary-hover underline">
+                    Liliput Familienwelt
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
