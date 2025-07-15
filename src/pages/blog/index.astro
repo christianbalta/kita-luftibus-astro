@@ -12,6 +12,7 @@ import bee from '../../assets/images/decoration/bee.png';
 import plane from '../../assets/images/decoration/plane.png';
 import bottomShape from '../../assets/images/backgrounds/bottom-shape.png';
 import topShape from '../../assets/images/backgrounds/section-top-shape.png';
+import FormattedDate from "../../components/common/FormattedDate.astro";
 
 const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -76,7 +77,7 @@ const posts = (await getCollection('blog')).sort(
               <div class="p-6">
                 <div class="flex items-center space-x-2 text-text-gray text-sm mb-3">
                   <i class="fas fa-calendar"></i>
-                  <span>{post.data.pubDate}</span>
+                  <span><FormattedDate date={post.data.pubDate} /></span>
                 </div>
                 <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">
                   <a href={`/blog/${post.slug}`} class="hover:text-primary transition-colors">

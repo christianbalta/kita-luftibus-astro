@@ -2,6 +2,7 @@
 import Button from '../../common/Button.astro';
 import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
+import FormattedDate from "../../common/FormattedDate.astro";
 
 // Get the 3 latest blog posts
 const posts = (await getCollection('blog'))
@@ -39,11 +40,7 @@ const posts = (await getCollection('blog'))
             <div class="p-6">
               <div class="flex items-center space-x-2 text-text-gray text-sm mb-3">
                 <i class="fas fa-calendar"></i>
-                <span>{new Date(post.data.pubDate).toLocaleDateString('de-CH', {
-                  year: 'numeric',
-                  month: 'long',
-                  day: 'numeric'
-                })}</span>
+                <span><FormattedDate date={post.data.pubDate} /></span>
               </div>
               <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">
                 {post.data.title}

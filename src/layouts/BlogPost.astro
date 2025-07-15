@@ -9,10 +9,11 @@ import MobileMenu from '../components/layout/MobileMenu.astro';
 
 import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
 import topShape from '../assets/images/backgrounds/section-top-shape.png';
+import FormattedDate from "../components/common/FormattedDate.astro";
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate } = Astro.props;
 ---
 
 <Layout title={`${title} - Kita Luftibus Blog`} description={description}>
@@ -25,7 +26,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
     <section class="relative bg-background-cream pt-20 pb-32 overflow-hidden">
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto relative z-10">
-          <p class="text-primary font-medium mb-4">{pubDate}</p>
+          <p class="text-primary font-medium mb-4"><FormattedDate date={pubDate} /></p>
           <h1 class="font-family-heading font-bold text-3xl lg:text-5xl text-header-dark mb-6">
             {title}
           </h1>

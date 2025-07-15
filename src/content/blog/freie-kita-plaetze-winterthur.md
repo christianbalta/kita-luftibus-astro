@@ -1,8 +1,8 @@
 ---
 title: 'Freie Kita Plätze in Winterthur'
 description: 'Aktuelle Verfügbarkeit von Betreuungsplätzen für Kinder in der Kita Luftibus Winterthur'
-pubDate: '04.Juni 2025'
-heroImage: '/src/assets/images/about/kind-beim-spielen.jpeg'
+pubDate: 'Juni 04 2025'
+heroImage: '../../assets/images/about/kind-beim-spielen.jpeg'
 ---
 
 ## Aktuelle Verfügbarkeit bei Kita Luftibus
