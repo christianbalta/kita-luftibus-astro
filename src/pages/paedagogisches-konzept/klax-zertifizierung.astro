@@ -1,0 +1,91 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TopBar from '../../components/layout/TopBar.astro'
+import Header from '../../components/layout/Header.astro';
+import Footer from '../../components/layout/Footer.astro';
+import MobileMenu from '../../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bottomShape from '../../assets/images/backgrounds/bottom-shape.png';
+import topShape from '../../assets/images/backgrounds/section-top-shape.png';
+
+// KLAX Zertifizierung Images
+import klaxStufe1 from '../../assets/images/klax-zertifizierungen/klax-zertifikat-stufe-1.jpg';
+import klaxStufe2 from '../../assets/images/klax-zertifizierungen/klax-zertifikat-stufe-2.jpg';
+import klaxStufe3 from '../../assets/images/klax-zertifizierungen/klax-zertifizierung-stufe-3.png';
+---
+
+<Layout title="KLAX-Zertifizierung - Pädagogisches Konzept - KiTa Luftibus Winterthur" description="Informationen zur KLAX-Zertifizierung der KiTa Luftibus in Winterthur.">
+  <TopBar />
+  <Header />
+  <MobileMenu />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            KLAX-<span class="text-primary">Zertifizierungen</span>
+          </h1>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="py-20 lg:py-32 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-4xl mx-auto">
+          <div class="mb-16">
+            <div class="bg-white rounded-2xl p-6 shadow-default">
+              <div class="relative">
+                <p class="text-text-gray text-lg leading-relaxed mb-12 text-center">
+                  Im Frühling 2012 haben wir die erste Stufe der KLAX-Zertifizierung erhalten.
+                </p>
+                <Image
+                  src={klaxStufe1}
+                  alt="KLAX Zertifikat Stufe 1"
+                  class="w-full object-contain rounded-xl mx-auto"
+                />
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-default">
+              <div class="relative">
+                <p class="text-text-gray text-lg leading-relaxed mb-12 text-center">
+                  Im Herbst 2013 haben wir die zweite Stufe der KLAX-Zertifizierung erreicht. Weitere Informationen zu diesem pädagogischen Konzept finden Sie auf der Website der KLAX-GmbH.
+                </p>
+                <Image
+                  src={klaxStufe2}
+                  alt="KLAX Zertifikat Stufe 2"
+                  class="w-full object-contain rounded-xl mx-auto"
+                />
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-default">
+              <div class="relative">
+                <p class="text-text-gray text-lg leading-relaxed mb-12 text-center">
+                  im Herbst 2021 haben wir die dritte Stufe der KLAX-Zertifizierung erreicht.
+                </p>
+                <Image
+                  src={klaxStufe3}
+                  alt="KLAX Zertifikat Stufe 3"
+                  class="w-full object-contain rounded-xl mx-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

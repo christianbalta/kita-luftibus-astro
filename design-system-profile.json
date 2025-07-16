@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "Kita Luftibus Design System",
+    "name": "KiTa Luftibus Design System",
     "description": "Scandinavian-inspired childcare center design system with warm, playful aesthetics",
     "language": "de",
     "framework": "Astro",
@@ -9,7 +9,7 @@
     "style": "Scandinavian, Warm, Playful, Child-Friendly"
   },
   "brandIdentity": {
-    "name": "Kita Luftibus",
+    "name": "KiTa Luftibus",
     "tagline": "Skandinavische Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur",
     "personality": ["warm", "nurturing", "playful", "professional", "trustworthy"],
     "tone": "friendly, approachable, caring, educational"

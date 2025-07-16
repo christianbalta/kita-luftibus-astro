@@ -35,27 +35,27 @@ export const sitemap: SiteMap = {
           title: "Portfolio Konzept in Bildern",
           url: "/paedagogisches-konzept/portfolio-konzept-in-bildern"
         },
-        certifications: {
-          title: "Zertifizierungen",
-          url: "/paedagogisches-konzept/zertifizierungen"
+        klax_certification: {
+          title: "KLAX-Zertifizierungen",
+          url: "/paedagogisches-konzept/klax-zertifizierung"
         }
       }
     },
     rates_and_information: {
       title: "Tarife & Info",
-      url: "/tarife-info",
+      url: "/tarife-und-informationen",
       subpages: {
         opening_hours: {
           title: "Öffnungszeiten",
-          url: "/tarife-informationen/oeffnungszeiten"
+          url: "/tarife-und-informationen/oeffnungszeiten"
         },
         useful_information_for_parents: {
           title: "Wissenswertes für Eltern",
-          url: "/tarife-informationen/wissenswertes-fuer-eltern"
+          url: "/tarife-und-informationen/wissenswertes-fuer-eltern"
         },
         operating_regulations: {
           title: "Betriebsreglement",
-          url: "/tarife-informationen/betriebsreglement"
+          url: "/tarife-und-informationen/betriebsreglement"
         }
       }
     },

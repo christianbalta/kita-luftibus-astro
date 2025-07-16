@@ -6,11 +6,34 @@ import bus from '../../../assets/images/decoration/bus.png';
 import girl from '../../../assets/images/decoration/girl.png';
 import kindBeimSpielen from '../../../assets/images/about/kind-beim-spielen.jpeg';
 
+const whyChooseUs = [
+  {
+    icon: 'clock',
+    title: 'Flexible Betreuungszeiten für berufstätige Eltern',
+    description: 'Unsere KiTa hat von Montag bis Freitag von 07:00 bis 18:15 Uhr geöffnet. Wir bieten flexible Betreuungsmodelle – von einzelnen Tagen bis zur Vollzeitbetreuung. So finden Sie bei uns genau die Kinderbetreuung, die zu Ihrem Familienalltag passt. Weiter details finden Sie auf unserer <a href="/tarife-und-informationen/oeffnungszeiten" class="text-primary hover:text-primary-hover underline font-bold">Öffnungszeiten-Seite</a>.'
+  },
+  {
+    icon: 'map-marker-alt',
+    title: 'Erstklassige Lage und Erreichbarkeit',
+    description: 'Die KiTa Luftibus liegt in Hegi Winterthur und ist optimal mit dem öffentlichen Verkehr erreichbar. Egal ob Sie aus Winterthur-Töss, Wülflingen, Seen oder dem Stadtzentrum kommen – unsere Kindertagesstätte ist für alle Winterthurer Familien gut erreichbar.'
+  },
+  {
+    icon: 'user-tie',
+    title: 'Qualifiziertes Betreuungsteam',
+    description: 'Unser Team besteht aus ausgebildeten Fachpersonen Kinderbetreuung (FaBe) und erfahrenen Pädagoginnen. Bei uns legen wir grossen Wert auf eine individuelle Förderung jedes Kindes. Regelmässige Weiterbildungen garantieren höchste Betreuungsqualität.'
+  },
+  {
+    icon: 'certificate',
+    title: 'Qualität und Sicherheit',
+    description: 'Wir sind eine zertifizierte Kinderbetreuung in Winterthur und erfüllen alle kantonalen Auflagen für Kindertagesstätten. Wir sind: Mitglied bei kibesuisse (Verband Kinderbetreuung Schweiz), <a href="/paedagogisches-konzept/klax-zertifizierung" class="text-primary hover:text-primary-hover underline font-bold">KLAX-Zertifiziert</a> und ein Lehrbetrieb, der Fachkräfte ausbildet.'
+  },
+];
+
 const features = [
-  { icon: 'check-circle', title: 'Natur & Umwelt', description: 'Regelmässige Outdoor-Aktivitäten' },
-  { icon: 'check-circle', title: 'Kreativität', description: 'Freies Spiel und Kunstprojekte' },
-  { icon: 'check-circle', title: 'Soziales Lernen', description: 'Gemeinschaftsgefühl entwickeln' },
-  { icon: 'check-circle', title: 'Individualität', description: 'Jedes Kind in seinem Tempo' },
+  {icon: 'check-circle', title: 'Natur & Umwelt', description: 'Regelmässige Outdoor-Aktivitäten'},
+  {icon: 'check-circle', title: 'Kreativität', description: 'Freies Spiel und Kunstprojekte'},
+  {icon: 'check-circle', title: 'Soziales Lernen', description: 'Gemeinschaftsgefühl entwickeln'},
+  {icon: 'check-circle', title: 'Individualität', description: 'Jedes Kind in seinem Tempo'},
 ];
 ---
 
@@ -18,26 +41,48 @@ const features = [
   <!-- Floating decorative images - hidden on mobile -->
   <div class="absolute top-8 left-8 animate-float hidden md:block">
     <Image
-      src={bus}
-      alt="Bus Dekoration"
-      class="w-full h-auto"
+        src={bus}
+        alt="Bus Dekoration"
+        class="w-full h-auto"
     />
   </div>
-  <div class="absolute bottom-8 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
+  <div class="absolute bottom-8 right-8 animate-float hidden md:block"
+       style="animation-delay: 1.5s;">
     <Image
-      src={girl}
-      alt="Mädchen Dekoration"
-      class="w-full h-auto"
+        src={girl}
+        alt="Mädchen Dekoration"
+        class="w-full h-auto"
     />
   </div>
 
   <div class="container mx-auto px-4">
+    <!-- Why Choose Us Section -->
+    <div class="mb-16">
+      <h2 class="font-heading font-bold text-3xl lg:text-5xl text-header-dark mb-10 text-center">
+        Warum uns als KiTa <span class="text-primary">in Winterthur wählen?</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {whyChooseUs.map(item => (
+            <div class="bg-white rounded-2xl p-6 shadow-default">
+              <div class="flex flex-col items-center text-center">
+                <div
+                    class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                  <i class={`fas fa-${item.icon} text-white text-2xl`}></i>
+                </div>
+                <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">{item.title}</h3>
+                <p class="text-text-gray text-base" set:html={item.description}></p>
+              </div>
+            </div>
+        ))}
+      </div>
+    </div>
+
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="relative">
         <Image
-          src={kindBeimSpielen}
-          alt="Kind beim Spielen"
-          class="w-full rounded-2xl shadow-default"
+            src={kindBeimSpielen}
+            alt="Kind beim Spielen"
+            class="w-full rounded-2xl shadow-default"
         />
         <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-10"></div>
       </div>
@@ -48,27 +93,28 @@ const features = [
           <span class="text-primary"> Blickwinkel</span>
         </h2>
         <p class="text-text-gray text-lg mb-8 leading-relaxed">
-          Unser pädagogisches Konzept basiert auf der skandinavischen Bildungsphilosophie, die das Kind als kompetenten und neugierigen Forscher betrachtet. Wir schaffen eine Umgebung, in der Kinder frei explorieren, experimentieren und ihre eigenen Erfahrungen machen können.
+          Unser <a href="/paedagogisches-konzept"
+                   class="text-primary hover:text-primary-hover underline font-bold"
+                   title="Pädageogisches Konzept in der KiTa Luftibus Winterthur">pädagogisches
+          Konzept</a> basiert auf der skandinavischen Bildungsphilosophie, die das Kind als
+          kompetenten und neugierigen Forscher betrachtet. Wir schaffen eine Umgebung, in der Kinder
+          frei explorieren, experimentieren und ihre eigenen Erfahrungen machen können.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           {features.map(feature => (
-            <div class="flex items-start space-x-3">
-              <i class={`fas fa-${feature.icon} text-primary text-xl mt-1`}></i>
-              <div>
-                <h4 class="font-heading font-semibold text-header-dark mb-1">{feature.title}</h4>
-                <p class="text-text-gray text-sm">{feature.description}</p>
+              <div class="flex items-start space-x-3">
+                <i class={`fas fa-${feature.icon} text-primary text-xl mt-1`}></i>
+                <div>
+                  <h4 class="font-heading font-semibold text-header-dark mb-1">{feature.title}</h4>
+                  <p class="text-text-gray text-sm">{feature.description}</p>
+                </div>
               </div>
-            </div>
           ))}
         </div>
 
         <div class="flex items-center space-x-4">
-          <Button href="#contact">Mehr erfahren</Button>
-          <div class="flex items-center space-x-2 text-text-gray">
-            <i class="fas fa-phone text-primary"></i>
-            <span class="font-semibold">052 213 15 48</span>
-          </div>
+          <Button href="/paedagogisches-konzept">Mehr erfahren</Button>
         </div>
       </div>
     </div>

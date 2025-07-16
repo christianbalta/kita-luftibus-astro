@@ -13,7 +13,7 @@ All commands are run from the root of the project:
 
 ## Architecture Overview
 
-This is an Astro-based website for "Kita Luftibus" (a childcare center in Winterthur, Switzerland), built with:
+This is an Astro-based website for "KiTa Luftibus" (a childcare center in Winterthur, Switzerland), built with:
 
 - **Astro 5.11.0** - Static site generator with component-based architecture
 - **TailwindCSS 4.x** - Utility-first CSS framework with Vite integration

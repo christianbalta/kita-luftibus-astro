@@ -1,13 +1,13 @@
 ---
-title: 'Freie Kita Plätze in Winterthur'
-description: 'Aktuelle Verfügbarkeit von Betreuungsplätzen für Kinder in der Kita Luftibus Winterthur'
+title: 'Freie KiTa Plätze in Winterthur'
+description: 'Aktuelle Verfügbarkeit von Betreuungsplätzen für Kinder in der KiTa Luftibus Winterthur'
 pubDate: 'Juni 04 2025'
 heroImage: '../../assets/images/about/kind-beim-spielen.jpeg'
 ---
 
-## Aktuelle Verfügbarkeit bei Kita Luftibus
+## Aktuelle Verfügbarkeit bei KiTa Luftibus
 
-Die Kita Luftibus an der Rümikerstrasse 58 in Winterthur verfügt über freie Plätze und nimmt gerne neue Familien auf. Hier die aktuellen Verfügbarkeiten:
+Die KiTa Luftibus an der Rümikerstrasse 58 in Winterthur verfügt über freie Plätze und nimmt gerne neue Familien auf. Hier die aktuellen Verfügbarkeiten:
 
 ### Kleinstkindergruppe (ab 3 Monaten)
 
@@ -20,7 +20,7 @@ Die Kita Luftibus an der Rümikerstrasse 58 in Winterthur verfügt über freie P
 - Ab April 2025: Vereinzelte Plätze auf Anfrage verfügbar
 - Für Kinder verschiedener Altersgruppen bis zum Kindergarteneintritt
 
-## Warum Kita Luftibus die richtige Wahl ist
+## Warum KiTa Luftibus die richtige Wahl ist
 
 ### Inklusive Betreuung
 
@@ -41,7 +41,7 @@ Die Kita Luftibus an der Rümikerstrasse 58 in Winterthur verfügt über freie P
 
 ## Die Situation in Winterthur verstehen
 
-Winterthur erlebt derzeit eine besondere Situation mit Kitaschliessungen in der Region. Dies führt zu einer erhöhten Nachfrage nach Betreuungsplätzen. Kita Luftibus ist sich dieser Herausforderung bewusst und arbeitet gezielt daran, Familien zu unterstützen.
+Winterthur erlebt derzeit eine besondere Situation mit Kitaschliessungen in der Region. Dies führt zu einer erhöhten Nachfrage nach Betreuungsplätzen. KiTa Luftibus ist sich dieser Herausforderung bewusst und arbeitet gezielt daran, Familien zu unterstützen.
 
 ### Koordinierte Platzvergabe
 
@@ -66,7 +66,7 @@ Winterthur erlebt derzeit eine besondere Situation mit Kitaschliessungen in der 
 
 ## Warum jetzt handeln?
 
-In Winterthur sind aktuell verschiedene Kitas mit freien Plätzen verfügbar, aber die Nachfrage ist hoch. Kita Luftibus bietet:
+In Winterthur sind aktuell verschiedene Kitas mit freien Plätzen verfügbar, aber die Nachfrage ist hoch. KiTa Luftibus bietet:
 
 - Sofortige Verfügbarkeit an bestimmten Wochentagen
 - Planbare Plätze ab August 2025
