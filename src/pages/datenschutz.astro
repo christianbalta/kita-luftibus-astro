@@ -1,0 +1,390 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/layout/TopBar.astro'
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import MobileMenu from '../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
+---
+
+<Layout title="Datenschutz - KiTa Luftibus Winterthur"
+        description="Datenschutzerklärung der KiTa Luftibus Winterthur. Informationen zum Umgang mit Personendaten und Ihren Rechten.">
+  <TopBar/>
+  <Header/>
+  <MobileMenu/>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            <span class="text-primary">Datenschutz</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Datenschutzerklärung der KiTa Luftibus - Version vom 21.08.2023
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Datenschutz Content -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+
+          <!-- Einleitung -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <p class="text-text-gray leading-relaxed mb-4">
+              In dieser Datenschutzerklärung erläutern wir, der Verein KiTa Luftibus wie wir
+              Personendaten erheben und sonst bearbeiten. Das ist keine abschliessende Beschreibung;
+              allenfalls regeln andere Datenschutzerklärungen spezifische Sachverhalte. Unter
+              Personendaten werden alle Angaben verstanden, die sich auf eine bestimmte oder
+              bestimmbare Person beziehen.
+            </p>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Wenn Sie uns Personendaten anderer Personen (z.B. Familienmitglieder, Daten von
+              Arbeitskollegen) zur Verfügung stellen, stellen Sie bitte sicher, dass diese Personen
+              die vorliegende Datenschutzerklärung kennen und teilen Sie uns deren Personendaten nur
+              mit, wenn Sie dies dürfen und wenn diese Personendaten korrekt sind.
+            </p>
+            <p class="text-text-gray leading-relaxed">
+              Diese Datenschutzerklärung ist auf die Anforderungen der
+              EU-Datenschutz-Grundverordnung («DSGVO»), das Schweizer Datenschutzgesetz («DSG») und
+              das revidierte Schweizer Datenschutzgesetz («revDSG») ausgelegt. Ob und inwieweit
+              diese Gesetze anwendbar sind, hängt jedoch vom Einzelfall ab.
+            </p>
+          </div>
+
+          <!-- 1. Verantwortlicher -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">1.
+              Verantwortlicher / Datenschutzbeauftrager / Vertreter</h2>
+            <p class="text-text-gray leading-relaxed">
+              Verantwortlich für die Datenbearbeitungen, die wir hier beschreiben, ist Maria
+              Orlando, Rümikerstrasse 58, 8409 Winterthur. Wenn Sie datenschutzrechtliche Anliegen
+              haben, können Sie uns diese an folgende Kontaktadresse mitteilen: Verein KiTa
+              Luftibus, Rümikerstrasse 58, 8409 Winterthur, <a href="mailto:info@KiTa-luftibus.ch"
+                                                               class="text-primary hover:text-primary-dark">info@KiTa-luftibus.ch</a>
+            </p>
+          </div>
+
+          <!-- 2. Erhebung und Bearbeitung -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">2. Erhebung und
+              Bearbeitung von Personendaten</h2>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Wir bearbeiten in erster Linie die Personendaten, die wir im Rahmen unserer
+              Geschäftsbeziehung mit unseren Kunden und anderen Geschäftspartnern von diesen und
+              weiteren daran beteiligten Personen erhalten oder die wir beim Betrieb unserer
+              Websites, Apps und weiteren Anwendungen von deren Nutzern erheben.
+            </p>
+            <p class="text-text-gray leading-relaxed">
+              Soweit dies erlaubt ist, entnehmen wir auch öffentlich zugänglichen Quellen (z.B.
+              Betreibungsregister, Grundbücher, Handelsregister, Presse, Internet) gewisse Daten,
+              von Behörden und sonstigen Dritten. Nebst den Daten von Ihnen, die Sie uns direkt
+              geben, umfassen die Kategorien von Personendaten, die wir von Dritten über Sie
+              erhalten, insbesondere Angaben aus öffentlichen Registern, Angaben, die wir im
+              Zusammenhang mit behördlichen und gerichtlichen Verfahren erfahren, Angaben im
+              Zusammenhang mit ihren beruflichen Funktionen und Aktivitäten (damit wir z.B. mit
+              Ihrer Hilfe Geschäfte mit Ihrem Arbeitgeber abschliessen und abwickeln können),
+              Angaben über Sie in Korrespondenz und Besprechungen mit Dritten, Bonitätsauskünfte
+              (soweit wir mit Ihnen persönlich Geschäfte abwickeln), Angaben über Sie, die uns
+              Personen aus Ihrem Umfeld (Familie, Berater, Rechtsvertreter, etc.) geben, damit wir
+              Verträge mit Ihnen oder unter Einbezug von Ihnen abschliessen oder abwickeln können
+              (z.B. Referenzen, Ihre Adresse für Lieferungen, Vollmachten, Angaben zur Einhaltung
+              gesetzlicher Vorgaben wie etwa der Geldwäschereibekämpfung und Exportrestriktionen,
+              Angaben von Banken, Versicherungen, Vertriebs- und anderen Vertragspartnern von uns
+              zur Inanspruchnahme oder Erbringung von Leistungen durch Sie (z.B. erfolgte Zahlungen,
+              erfolgte Käufe), Angaben aus Medien und Internet zu Ihrer Person (soweit dies im
+              konkreten Fall angezeigt ist, z.B. im Rahmen einer Bewerbung, Presseschau,
+              Marketing/Verkauf, etc.), Ihre Adressen und ggf. Interessen und weitere
+              soziodemographische Daten (für Marketing), Daten im Zusammenhang mit der Benutzung der
+              Website (z.B. IP-Adresse, MAC-Adresse des Smartphones oder Computers, Angaben zu Ihrem
+              Gerät und Einstellungen, Cookies, Datum und Zeit des Besuchs, abgerufene Seiten und
+              Inhalte, benutzte Funktionen, verweisende Website, Standortangaben).
+            </p>
+          </div>
+
+          <!-- 3. Zwecke der Datenbearbeitung -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">3. Zwecke der
+              Datenbearbeitung und Rechtsgrundlagen</h2>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Wir verwenden die von uns erhobenen Personendaten in erster Linie, um unsere Verträge
+              mit unseren Kunden und Geschäftspartnern abzuschliessen und abzuwickeln, so
+              insbesondere im Rahmen der Erbringung unserer Dienstleistungen mit unseren Kunden und
+              den Einkauf von Produkten und Dienstleistungen von unseren Lieferanten und
+              Subunternehmern, sowie um unseren gesetzlichen Pflichten im In- und Ausland
+              nachzukommen. Wenn Sie für einen solchen Kunden oder Geschäftspartner tätig sind,
+              können Sie in dieser Funktion mit Ihren Personendaten natürlich ebenfalls davon
+              betroffen sein.
+            </p>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Darüber hinaus bearbeiten wir Personendaten von Ihnen und weiteren Personen, soweit
+              erlaubt und es uns als angezeigt erscheint, auch für folgende Zwecke, an denen wir
+              (und zuweilen auch Dritte) ein dem Zweck entsprechendes berechtigtes Interesse haben:
+            </p>
+            <ul class="list-disc pl-6 mb-4 space-y-2 text-text-gray">
+              <li>Angebot und Weiterentwicklung unserer Angebote, Dienstleistungen und Websites,
+                Apps und weiteren Plattformen, auf welchen wir präsent sind;
+              </li>
+              <li>Kommunikation mit Dritten und Bearbeitung derer Anfragen (z.B. Bewerbungen,
+                Medienanfragen);
+              </li>
+              <li>Prüfung und Optimierung von Verfahren zur Bedarfsanalyse zwecks direkter
+                Kundenansprache sowie Erhebung von Personendaten aus öffentlich zugänglichen Quellen
+                zwecks Kundenakquisition;
+              </li>
+              <li>Werbung und Marketing (einschliesslich Durchführung von Anlässen), soweit Sie der
+                Nutzung Ihrer Daten nicht widersprochen haben (wenn wir Ihnen als bestehender Kunde
+                von uns Werbung zukommen lassen, können Sie dem jederzeit widersprechen, wir setzen
+                Sie dann auf eine Sperrliste gegen weitere Werbesendungen);
+              </li>
+              <li>Geltendmachung rechtlicher Ansprüche und Verteidigung in Zusammenhang mit
+                rechtlichen Streitigkeiten und behördlichen Verfahren;
+              </li>
+              <li>Verhinderung und Aufklärung von Straftaten und sonstigem Fehlverhalten (z.B.
+                Durchführung interner Untersuchungen, Datenanalysen zur Betrugsbekämpfung);
+              </li>
+              <li>Gewährleistungen unseres Betriebs, insbesondere der IT, unserer Websites, Apps und
+                weiteren Plattformen;
+              </li>
+              <li>Videoüberwachungen zur Wahrung des Hausrechts und sonstige Massnahmen zur IT-,
+                Gebäude- und Anlagesicherheit und Schutz unserer Mitarbeiter und weiteren Personen
+                und uns gehörenden oder anvertrauten Werte (wie z.B. Zutrittskontrollen,
+                Besucherlisten, Netzwerk- und Mailscanner, Telefonaufzeichnungen);
+              </li>
+              <li>Kauf und Verkauf von Geschäftsbereichen, Gesellschaften oder Teilen von
+                Gesellschaften und andere gesellschaftsrechtliche Transaktionen und damit verbunden
+                die Übertragung von Personendaten sowie Massnahmen zur Geschäftssteuerung und soweit
+                zur Einhaltung gesetzlicher und regulatorischer Verpflichtungen sowie interner
+                Vorschriften des Vereins KiTa Luftibus.
+              </li>
+            </ul>
+            <p class="text-text-gray leading-relaxed">
+              Soweit Sie uns eine Einwilligung zur Bearbeitung Ihrer Personaldaten für bestimmte
+              Zwecke erteilt haben (zum Beispiel bei Ihrer Anmeldung zum Erhalt von Newslettern oder
+              Durchführung eines Background-Checks), bearbeiten wir Ihre Personendaten im Rahmen und
+              gestützt auf diese Einwilligung, soweit wir keine andere Rechtsgrundlage haben und wir
+              eine solche benötigen. Eine erteilte Einwilligung kann jederzeit widerrufen werden,
+              was jedoch keine Auswirkung auf bereits erfolgte Datenbearbeitungen hat.
+            </p>
+          </div>
+
+          <!-- 4. Cookies -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">4. Cookies /
+              Tracking und andere Technologien im Zusammenhang mit der Nutzung unserer Website</h2>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Wir setzen auf unserer Webseite typischerweise „Cookies" und vergleichbare Techniken
+              ein, mit denen Ihr Browser oder Ihr Gerät identifiziert werden kann. Ein Cookie ist
+              eine kleine Datei, die an Ihren Computer gesendet bzw. vom verwendeten Webbrowser
+              automatisch auf Ihrem Computer oder mobilen Gerät gespeichert wird, wenn Sie unsere
+              Website besuchen. Wenn Sie diese Website erneut aufrufen, können wir Sie so
+              wiedererkennen, selbst wenn wir nicht wissen, wer Sie sind. Neben Cookies, die
+              lediglich während einer Sitzung benutzt und nach Ihrem Website-Besuch gelöscht werden
+              („Session Cookies"), können Cookies auch benutzt werden, um Nutzereinstellungen und
+              andere Informationen über eine bestimmte Zeit (z.B. zwei Jahre) zu speichern
+              („permanente Cookies"). Sie können Ihren Browser jedoch so einstellen, dass er Cookies
+              zurückweist, nur für eine Sitzung speichert oder sonst vorzeitig löscht. Die meisten
+              Browser sind so voreingestellt, dass Sie Cookies akzeptieren. Wir nutzen permanente
+              Cookies damit Sie Benutzereinstellungen speichern (z.B. Sprache, Autologin), damit wir
+              besser verstehen, wie Sie unsere Angebote und Inhalte nutzen, und damit wir Ihnen auf
+              Sie zugeschnittene Angebote und Werbung anzeigen können (was auch auf Websites von
+              anderen Firmen geschehen kann; diese erfahren dann allerdings von uns nicht, wer Sie
+              sind, falls wir selbst das überhaupt wissen, denn sie sehen nur, dass auf ihrer
+              Website derselbe Nutzer ist, der auch bei uns auf einer bestimmten Seite war). Gewisse
+              der Cookies werden von uns gesetzt, gewisse auch von Vertragspartnern, mit denen wir
+              zusammenarbeiten. Wenn Sie Cookies sperren, kann es sein, dass gewisse
+              Funktionalitäten (wie z.B. Sprachwahl, Warenkorb, Bestellprozesse) nicht mehr
+              funktionieren.
+            </p>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Mit der Nutzung unserer Website stimmen Sie dem Einsatz dieser Techniken zu. Wollen
+              Sie dies nicht, dann müssen Sie Ihren Browser bzw. Ihre E-Mail-Programm entsprechend
+              einstellen.
+            </p>
+            <h3 class="font-heading font-semibold text-lg text-header-dark mb-3">Verwendung der
+              Daten aus dem Anmeldeformular:</h3>
+            <p class="text-text-gray leading-relaxed">
+              Die Angaben aus dem Anmeldeformular werden per E-Mail an uns übermittelt. Wir
+              verwenden diese nur, um Ihre Anmeldung zu bearbeiten und geben diese nicht an Dritte
+              weiter. Ihre Einwilligung können Sie jederzeit per E-Mail an <a
+                href="mailto:info@KiTa-luftibus.ch" class="text-primary hover:text-primary-dark">info@KiTa-luftibus.ch</a>
+              oder an die im Impressum angegebenen Kontaktdaten widerrufen.
+            </p>
+          </div>
+
+          <!-- 5. Datenweitergabe -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">5. Datenweitergabe
+              und Datenübermittlung ins Ausland</h2>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Wir geben im Rahmen unserer geschäftlichen Aktivitäten und der Zwecke gemäss Ziff. 3,
+              soweit erlaubt und es uns als angezeigt erscheint, auch Dritten bekannt, sei es, weil
+              sie diese für uns bearbeiten, sei es, weil sie sie für ihre eigenen Zwecke verwenden
+              wollen. Dabei geht es insbesondere um folgende Stellen:
+            </p>
+            <ul class="list-disc pl-6 mb-4 space-y-2 text-text-gray">
+              <li>Dienstleister von uns, einschliesslich Auftragsbearbeitern (wie z.B.
+                IT-Provider);
+              </li>
+              <li>Händler, Lieferanten, Subunternehmer und sonstige Geschäftspartner;</li>
+              <li>in- und ausländische Behörden, Amtsstellen oder Gerichten;</li>
+              <li>Medien;</li>
+              <li>Öffentlichkeit, einschliesslich Besuchern von Websites und sozialer Medien;</li>
+              <li>Mitbewerber, Branchenorganisationen, Verbände, Organisationen und weitere
+                Gremien;
+              </li>
+              <li>Erwerber oder Interessenten am Erwerb von Geschäftsbereichen, Gesellschaften oder
+                sonstigen Teilen des Vereins KiTa Luftibus;
+              </li>
+              <li>anderen Parteien in möglichen oder tatsächlichen Rechtsverfahren;</li>
+            </ul>
+            <p class="text-text-gray leading-relaxed mb-4">alle gemeinsam Empfänger.</p>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Diese Empfänger sind teilweise im Inland, können aber irgendwo auf der Erde sein. Sie
+              müssen insbesondere mit der Übermittlung Ihrer Daten in alle Länder rechnen, wo sich
+              die von uns benutzten Dienstleister befinden.
+            </p>
+            <p class="text-text-gray leading-relaxed">
+              Befindet sich ein Empfänger in einem Land ohne angemessenen gesetzlichen Datenschutz,
+              verpflichten wir den Empfänger vertraglich zur Einhaltung des anwendbaren
+              Datenschutzes (dazu verwenden wir die revidierten Standardvertragsklauseln der
+              Europäischen Kommission, die hier: <a
+                href="https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?"
+                class="text-primary hover:text-primary-dark" target="_blank">https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj?</a>
+              abrufbar sind), soweit er nicht bereits einem gesetzlich anerkannten Regelwerk zur
+              Sicherstellung des Datenschutzes unterliegt und wir uns nicht auf eine
+              Ausnahmebestimmung stützen können. Eine Ausnahme kann namentlich bei Rechtsverfahren
+              im Ausland gelten, aber auch in Fällen überwiegender öffentlicher Interessen oder wenn
+              eine Vertragsabwicklung eine solche Bekanntgabe erfordert, wenn Sie eingewilligt haben
+              oder wenn es sich um von Ihnen allgemein zugänglich gemachte Daten handelt, deren
+              Bearbeitung Sie nicht widersprochen haben.
+            </p>
+          </div>
+
+          <!-- 6. Dauer der Aufbewahrung -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">6. Dauer der
+              Aufbewahrung von Personendaten</h2>
+            <p class="text-text-gray leading-relaxed">
+              Wir verarbeiten und speichern Ihre Personendaten, solange es für die Erfüllung unserer
+              vertraglichen und gesetzlichen Pflichten oder sonst die mit der Bearbeitung verfolgten
+              Zwecke erforderlich ist, d.h. also zum Beispiel für die Dauer der gesamten
+              Geschäftsbeziehung (von der Anbahnung, Abwicklung bis zur Beendigung eines Vertrags)
+              sowie darüber hinaus gemäss den gesetzlichen Aufbewahrungs- und
+              Dokumentationspflichten. Dabei ist es möglich, dass Personendaten für die Zeit
+              aufbewahrt werden, in der Ansprüche gegen unser Unternehmen geltend gemacht werden
+              können und soweit wir anderweitig gesetzlich dazu verpflichtet sind oder berechtigte
+              Geschäftsinteressen dies erfordern (z.B. für Beweis- und Dokumentationszwecke). Sobald
+              Ihre Personendaten für die oben genannten Zwecke nicht mehr erforderlich sind, werden
+              sie grundsätzlich und soweit möglich gelöscht oder anonymisiert. Für betriebliche
+              Daten (z.B. Systemprotokolle, Logs), gelten grundsätzliche kürzere
+              Aufbewahrungsfristen von zwölf Monaten oder weniger.
+            </p>
+          </div>
+
+          <!-- 7. Datensicherheit -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">7.
+              Datensicherheit</h2>
+            <p class="text-text-gray leading-relaxed">
+              Wir treffen angemessene technische und organisatorische Sicherheitsvorkehrungen zum
+              Schutz Ihrer Personendaten vor unberechtigtem Zugriff und Missbrauch wie etwa der IT-
+              und Netzwerksicherheitslösungen.
+            </p>
+          </div>
+
+          <!-- 8. Pflicht zur Bereitstellung -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">8. Pflicht zur
+              Bereitstellung von Personendaten</h2>
+            <p class="text-text-gray leading-relaxed">
+              Im Rahmen unserer Geschäftsbeziehung müssen Sie diejenigen Personendaten
+              bereitstellen, die für die Aufnahme und Durchführung einer Geschäftsbeziehung und der
+              Erfüllung der damit verbundenen vertraglichen Pflichten erforderlich sind (eine
+              gesetzliche Pflicht, uns Daten bereitzustellen, haben Sie in der Regel nicht). Ohne
+              diese Daten werden wir in der Regel nicht in der Lage sein, einen Vertrag mit Ihnen
+              (oder der Stelle oder Person, die Sie vertreten) zu schliessen oder diesen
+              abzuwickeln. Auch die Website kann nicht genutzt werden, wenn gewisse Angaben zur
+              Sicherstellung des Datenverkehrs (wie z.B. IP-Adresse) nicht offengelegt wird.
+            </p>
+          </div>
+
+          <!-- 9. Rechte der betroffenen Person -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">9. Rechte der
+              betroffenen Person</h2>
+            <p class="text-text-gray leading-relaxed mb-4">
+              Sie haben im Rahmen des auf Sie anwendbaren Datenschutzrechts und soweit darin
+              vorgesehen (wie etwa im Falle der DSGVO) das Recht auf Auskunft, Berichtigung,
+              Löschung, das Recht auf Einschränkung der Datenbearbeitung und sonst dem Widerspruch
+              gegen unsere Datenbearbeitungen, insbesondere jener für Zwecke des Direktmarketings,
+              des für Direktwerbung betriebenen Profilings und weiterer berechtigter Interessen an
+              der Bearbeitung sowie auf Herausgabe gewisser Personendaten zwecks Übertragung an eine
+              andere Stelle (sog. Datenportabilität). Bitte beachten Sie aber, dass wir uns
+              vorbehalten, unsererseits die gesetzlich vorgesehenen Einschränkungen geltend zu
+              machen, etwa wenn wir zur Aufbewahrung oder Bearbeitung gewisser Daten verpflichtet
+              sind, daran ein überwiegendes Interesse haben (soweit wir uns darauf berufen dürfen)
+              oder sie für die Geltendmachung von Ansprüchen benötigen. Falls für Sie Kosten
+              anfallen, werden wir Sie vorab informieren. Über die Möglichkeit, Ihre Einwilligung zu
+              widerrufen, haben wir bereits in Ziff. 3 informiert. Beachten Sie, dass die Ausübung
+              dieser Rechte im Konflikt zu vertraglichen Abmachungen stehen kann und dies Folgen wie
+              z.B. die vorzeitige Vertragsauflösung oder Kostenfolgen haben kann. Wir werden Sie
+              diesfalls vorgängig informieren, wo dies nicht bereits vertraglich geregelt ist. Die
+              Ausübung solcher Rechte setzt in der Regel voraus, dass Sie Ihre Identität eindeutig
+              nachweisen (z.B. durch eine Ausweiskopie, wo Ihre Identität sonst nicht klar ist bzw.
+              verifiziert werden kann). Zur Geltendmachung Ihrer Rechte können Sie uns unter der in
+              Ziffer 1 angegebenen Adresse kontaktieren. Jede betroffene Person hat überdies das
+              Recht, ihre Ansprüche gerichtlich durchzusetzen oder bei der zuständigen
+              Datenschutzbehörde eine Beschwerde einzureichen. Die zuständige Datenschutzbehörde der
+              Schweiz ist der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte (<a
+                href="http://www.edoeb.admin.ch" class="text-primary hover:text-primary-dark"
+                target="_blank">http://www.edoeb.admin.ch</a>).
+            </p>
+          </div>
+
+          <!-- 10. Änderungen -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">10.
+              Änderungen</h2>
+            <p class="text-text-gray leading-relaxed">
+              Wir können diese Datenschutzerklärung jederzeit ohne Vorankündigung anpassen. Es gilt
+              die jeweils aktuelle, auf unserer Website publizierte Fassung. Soweit die
+              Datenschutzerklärung Teil einer Vereinbarung mit Ihnen ist, werden wir Sie im Falle
+              einer Aktualisierung über die Änderung per E-Mail oder auf andere geeignete Weise
+              informieren.
+            </p>
+          </div>
+
+          <!-- Credits -->
+          <div class="bg-white rounded-2xl p-8 shadow-default">
+            <p class="text-sm text-text-gray leading-relaxed">
+              Diese Datenschutzerklärung basiert auf DSAT.ch.<br>
+              Autoren: David Rosenthal, Katrina Frame. Alle Rechte vorbehalten.<br>
+              Fachredaktion: David Rosenthal (<a href="mailto:david.rosenthal@homburger.ch"
+                                                 class="text-primary hover:text-primary-dark">david.rosenthal@homburger.ch</a>),
+              David Vasella (<a href="mailto:david.vasella@walderwyss.com"
+                                class="text-primary hover:text-primary-dark">david.vasella@walderwyss.com</a>).<br>
+              Lizenz: Creative Commons "Namensnennung 4.0 International" (Namensnennung: «Basierend
+              auf DSAT.ch.»)
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer/>
+</Layout>

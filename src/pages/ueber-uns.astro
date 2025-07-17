@@ -6,9 +6,9 @@ import Footer from '../components/layout/Footer.astro';
 import MobileMenu from '../components/layout/MobileMenu.astro';
 import {Image} from 'astro:assets';
 
-import bus from '../assets/images/decoration/bus.png';
-import regenbogen from '../assets/images/decoration/frame.png';
-import kindBeimSpielen from '../assets/images/about/kind-beim-spielen.jpeg';
+import lineShape from '../assets/images/decoration/line-shape.png';
+import heartIcon from '../assets/images/decoration/love.png';
+import kindBeimSpielen from '../assets/images/paedagogisches-konzept/portfolio-konzept/bewegung-im-freien/Kind-klettert-stufen-hoch.jpeg';
 import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
 import topShape from '../assets/images/backgrounds/section-top-shape.png';
 
@@ -65,15 +65,15 @@ const keyFacts = [
       <!-- Floating decorative images - hidden on mobile -->
       <div class="absolute top-8 left-8 animate-float hidden md:block">
         <Image
-          src={bus}
-          alt="Bus Dekoration"
+          src={lineShape}
+          alt="Linie Dekoration"
           class="w-full h-auto"
         />
       </div>
       <div class="absolute bottom-8 right-8 animate-float hidden md:block" style="animation-delay: 1.5s;">
         <Image
-          src={regenbogen}
-          alt="Regenbogen Dekoration"
+          src={heartIcon}
+          alt="Herz Dekoration"
           class="w-full h-auto"
         />
       </div>
@@ -147,7 +147,9 @@ const keyFacts = [
             <Image
               src={kindBeimSpielen}
               alt="Kinder beim Spielen in der Kita"
-              class="w-full rounded-2xl shadow-default"
+              class="rounded-2xl shadow-default"
+              width={500}
+              height={667}
             />
             <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-10"></div>
           </div>

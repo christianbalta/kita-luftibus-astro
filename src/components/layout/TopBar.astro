@@ -6,7 +6,8 @@ import {Image} from 'astro:assets';
 <div class="hidden md:block relative bg-background-cream text-header-dark py-10 overflow-hidden">
   <!-- Blue wave background -->
   <div class="absolute inset-0 z-0">
-    <Image src={topShape} alt="Blaue wellen hintergrund bild" class="w-full h-full object-cover" />
+    <Image src={topShape} alt="Blaue wellen hintergrund bild" class="w-full h-full object-cover"
+           loading="eager"/>
   </div>
 
   <div class="container mx-auto px-4 relative z-10 -mt-7">
@@ -27,7 +28,8 @@ import {Image} from 'astro:assets';
       <div class="flex items-center space-x-4 mt-2 md:mt-0">
         <div class="flex items-center space-x-2">
           <span class="text-xs">Folge uns:</span>
-          <a href="#" class="hover:opacity-80 transition-opacity" aria-label="Instagram">
+          <a href="https://www.instagram.com/kita.luftibus" target="_blank"
+             class="hover:opacity-80 transition-opacity" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </div>

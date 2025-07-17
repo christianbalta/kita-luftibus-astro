@@ -16,9 +16,9 @@ const contactInfo = {
 };
 
 const openingHours = [
-  { day: 'Montag - Freitag', time: '07:00 - 18:00' },
-  { day: 'Samstag', time: 'Geschlossen' },
-  { day: 'Sonntag', time: 'Geschlossen' }
+  {day: 'Montag - Freitag', time: '07:00 - 18:00'},
+  {day: 'Samstag', time: 'Geschlossen'},
+  {day: 'Sonntag', time: 'Geschlossen'}
 ];
 ---
 
@@ -28,16 +28,18 @@ const openingHours = [
       <div>
         <div class="flex items-center mb-6">
           <Image
-            src={logo}
-            alt="KiTa Luftibus"
-            class="h-full w-auto"
+              src={logo}
+              alt="KiTa Luftibus"
+              class="h-full w-auto"
           />
         </div>
         <p class="text-text-gray mb-6">
           Skandinavische Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur.
         </p>
         <div class="flex space-x-4">
-          <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-opacity-80 transition-colors">
+          <a href="https://www.instagram.com/kita.luftibus" target="_blank"
+             class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white hover:bg-opacity-80 transition-colors"
+             aria-label="Beseuche uns auf Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
@@ -68,10 +70,10 @@ const openingHours = [
         <h4 class="font-heading font-semibold text-header-dark mb-4">Öffnungszeiten</h4>
         <div class="space-y-2 text-text-gray">
           {openingHours.map(hour => (
-            <div class="flex justify-between">
-              <span>{hour.day}:</span>
-              <span>{hour.time}</span>
-            </div>
+              <div class="flex justify-between">
+                <span>{hour.day}:</span>
+                <span>{hour.time}</span>
+              </div>
           ))}
         </div>
       </div>
@@ -81,25 +83,25 @@ const openingHours = [
         <div class="space-y-4">
           <div class="flex items-center space-x-3">
             <Image
-              src={kibesuisseLogo}
-              alt="KiBesuisse"
-              class="h-full w-auto"
+                src={kibesuisseLogo}
+                alt="KiBesuisse"
+                class="h-full w-auto"
             />
           </div>
           <p class="text-header-darker text-sm font-bold">Kibesuisse</p>
           <div class="flex items-center space-x-3">
             <Image
-              src={klaxLogo}
-              alt="KLAX"
-              class="h-15 w-auto"
+                src={klaxLogo}
+                alt="KLAX"
+                class="h-15 w-auto"
             />
           </div>
           <p class="text-header-dark text-sm font-bold">Klax-Zertifizierung</p>
           <div class="flex items-center space-x-3">
             <Image
-              src={berufsbildungLogo}
-              alt="Berufsbildung"
-              class="h-15 w-auto"
+                src={berufsbildungLogo}
+                alt="Berufsbildung"
+                class="h-15 w-auto"
             />
           </div>
           <p class="text-header-dark text-sm font-bold">Wir bilden Fachkräfte aus</p>
@@ -113,9 +115,9 @@ const openingHours = [
           © 2025 KiTa Luftibus Winterthur. Alle Rechte vorbehalten.
         </p>
         <div class="flex space-x-6">
-          <a href="#" class="text-text-gray hover:text-primary text-sm transition-colors">Datenschutz</a>
-          <a href="#" class="text-text-gray hover:text-primary text-sm transition-colors">Impressum</a>
-          <a href="#" class="text-text-gray hover:text-primary text-sm transition-colors">AGB</a>
+          <a href="/datenschutz"
+             class="text-text-gray hover:text-primary text-sm transition-colors">Datenschutz</a>
+          <a href="/impressum" class="text-text-gray hover:text-primary text-sm transition-colors">Impressum</a>
         </div>
       </div>
     </div>

@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/layout/TopBar.astro'
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import MobileMenu from '../components/layout/MobileMenu.astro';
+import {Image} from 'astro:assets';
+
+import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
+---
+
+<Layout title="Impressum - KiTa Luftibus Winterthur"
+        description="Impressum der KiTa Luftibus Winterthur. Kontaktangaben und rechtliche Informationen.">
+  <TopBar/>
+  <Header/>
+  <MobileMenu/>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h1 class="font-heading font-bold text-4xl lg:text-6xl text-header-dark mb-6">
+            <span class="text-primary">Impressum</span>
+          </h1>
+          <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
+            Rechtliche Informationen und Kontaktangaben
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 left-0 right-0">
+        <Image
+            src={bottomShape}
+            alt="Bottom shape"
+        />
+      </div>
+    </section>
+
+    <!-- Impressum Content -->
+    <section class="py-20 bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+
+          <!-- Angaben gemäss UWG -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <div class="space-y-4">
+              <div>
+                <p class="text-text-gray leading-relaxed">
+                  <strong class="text-header-dark">Verein KiTa Luftibus</strong><br>
+                  Maria Orlando<br>
+                  Rümikerstrasse 58<br>
+                  8409 Winterthur<br>
+                  Schweiz
+                </p>
+              </div>
+
+              <div class="pt-4">
+                <p class="text-text-gray">
+                  <strong class="text-header-dark">Telefon:</strong> <a href="tel:+41522231324"
+                                                                        class="text-primary hover:text-primary-dark">052
+                  223 13 24</a><br>
+                  <strong class="text-header-dark">E-Mail:</strong> <a
+                    href="mailto:info@kita-luftibus.ch"
+                    class="text-primary hover:text-primary-dark">info@kita-luftibus.ch</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vereinsangaben -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-4">
+              Vereinsangaben</h2>
+            <p class="text-text-gray leading-relaxed">
+              <strong class="text-header-dark">Rechtsform:</strong> Verein nach Art. 60 ff. ZGB<br>
+              <strong class="text-header-dark">Vertretungsberechtigte Person:</strong> Maria Orlando
+            </p>
+          </div>
+
+          <!-- Haftungsausschluss -->
+          <div class="bg-white rounded-2xl p-8 shadow-default mb-6">
+            <h2 class="font-heading font-semibold text-2xl text-header-dark mb-6">
+              Haftungsausschluss</h2>
+
+            <!-- Inhalt der Website -->
+            <div class="mb-8">
+              <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">Inhalt der
+                Website</h3>
+              <p class="text-text-gray leading-relaxed">
+                Die Inhalte unserer Seiten wurden mit grösster Sorgfalt erstellt. Für die
+                Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine
+                Gewähr übernehmen. Als Diensteanbieter sind wir gemäss Art. 93 Abs. 1 FMG für eigene
+                Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+              </p>
+            </div>
+
+            <!-- Externe Links -->
+            <div class="mb-8">
+              <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">Externe
+                Links</h3>
+              <p class="text-text-gray leading-relaxed">
+                Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir
+                keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine
+                Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige
+                Anbieter oder Betreiber der Seiten verantwortlich.
+              </p>
+            </div>
+
+            <!-- Urheberrecht -->
+            <div class="mb-8">
+              <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">Urheberrecht</h3>
+              <p class="text-text-gray leading-relaxed">
+                Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+                unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung,
+                Verbreitung und jede Art der Verwertung ausserhalb der Grenzen des Urheberrechtes
+                bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.
+              </p>
+            </div>
+
+            <!-- Datenschutz -->
+            <div>
+              <h3 class="font-heading font-semibold text-xl text-header-dark mb-3">Datenschutz</h3>
+              <p class="text-text-gray leading-relaxed">
+                Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten
+                möglich. Soweit auf unseren Seiten personenbezogene Daten erhoben werden, erfolgt
+                dies stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche
+                Zustimmung nicht an Dritte weitergegeben.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stand -->
+          <div class="bg-white rounded-2xl p-8 shadow-default">
+            <p class="text-text-gray text-center">
+              <em>Stand: 17.07.2025</em>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer/>
+</Layout>
