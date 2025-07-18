@@ -8,7 +8,7 @@ export interface Props {
 
 const {
   title,
-  description = "Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur. Aktuell freie Plätze, melden Sie Ihr Kind jetzt an!",
+  description = "KiTa Luftibus bietet Kinderbetreuung in Winterthur für Kinder von 3 Monaten bis 5 Jahren. Freie Plätze verfügbar - jetzt anmelden.",
 } = Astro.props;
 ---
 
@@ -22,15 +22,14 @@ const {
   <!-- Preconnect to external domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  
+
   <!-- Load fonts asynchronously for better performance with font-display: swap -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&family=Pangolin&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&family=Pangolin&display=swap" rel="stylesheet"></noscript>
   
   <!-- Preload Font Awesome CSS and load asynchronously -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
+  <link rel="preload" href="/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/css/all.min.css"></noscript>
   
   <!-- Critical CSS inlined -->
   <style>
