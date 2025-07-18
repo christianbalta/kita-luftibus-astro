@@ -8,7 +8,7 @@ export interface Props {
 
 const {
   title,
-  description = "Skandinavische Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur."
+  description = "Kinderbetreuung für Kinder von 3 Monaten bis 5 Jahren in Winterthur. Aktuell freie Plätze, melden Sie Ihr Kind jetzt an!",
 } = Astro.props;
 ---
 
@@ -19,11 +19,31 @@ const {
   <meta name="description" content={description}/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-  <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&family=Pangolin&display=swap"
-      rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet">
+  <!-- Preconnect to external domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  
+  <!-- Load fonts asynchronously for better performance with font-display: swap -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&family=Pangolin&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&family=Pangolin&display=swap" rel="stylesheet"></noscript>
+  
+  <!-- Preload Font Awesome CSS and load asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"></noscript>
+  
+  <!-- Critical CSS inlined -->
+  <style>
+    :root {
+      --color-primary: #F39F5F;
+      --color-primary-dark: #E58A44;
+      --color-header-dark: #385469;
+      --font-family-body: 'Quicksand', sans-serif;
+    }
+    body { font-family: var(--font-family-body); }
+    .font-family-body { font-family: var(--font-family-body); }
+  </style>
+  
   <meta name="generator" content={Astro.generator}/>
   <title>{title}</title>
 </head>

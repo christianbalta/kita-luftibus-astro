@@ -2,7 +2,7 @@
 title: 'Erweiterte Öffnungszeiten ab März 2025: Mehr Flexibilität für Winterthurer Familien'
 description: 'KiTa Luftibus verlängert die Betreuungszeiten bis 18:15 Uhr - eine Anpassung basierend auf den Bedürfnissen unserer Eltern'
 pubDate: 'Januar 22 2025'
-heroImage: '../../assets/images/blog/uhr-illustration-neue_oeffnungszeiten_kita_luftibus.png'
+heroImage: '../../assets/images/blog/uhr-illustration-neue_oeffnungszeiten_KiTa_luftibus.png'
 ---
 
 ## Wichtige Neuerung: Längere Betreuungszeiten ab März
@@ -21,7 +21,7 @@ gewünscht, um ihre Arbeitszeiten besser mit der Kinderbetreuung zu koordinieren
 familienorientierte Kindertagesstätte ist es uns wichtig, auf die Bedürfnisse unserer Familien
 einzugehen.
 
-## Flexible Kinderbetreuung für moderne Familien
+## Flexible Kinderbetreuung in Winterthur für moderne Familien
 
 Die erweiterten Öffnungszeiten unterstützen besonders:
 
@@ -35,7 +35,7 @@ Die erweiterten Öffnungszeiten unterstützen besonders:
 Trotz der verlängerten Öffnungszeiten bleibt unser Betreuungsschlüssel unverändert. Unser
 qualifiziertes Fachpersonal gewährleistet auch in den erweiterten Stunden die gewohnt hohe Qualität
 der Betreuung. Die Kinder erleben einen strukturierten Tagesablauf mit genügend Ruhepausen, auch
-wenn sie länger in der Kita bleiben.
+wenn sie länger in der KiTa bleiben.
 
 ### Sanfter Übergang für alle Kinder
 

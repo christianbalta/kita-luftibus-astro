@@ -16,7 +16,7 @@ haben!
 
 ## Gemeinschaftsgefühl trotz Aprilwetter
 
-Obwohl die Wetterprognose nicht ganz mitspielte, liess sich unsere Kita-Gemeinschaft die Stimmung
+Obwohl die Wetterprognose nicht ganz mitspielte, liess sich unsere KiTa-Gemeinschaft die Stimmung
 nicht verderben. Spontan verlegten wir die geplanten Aktivitäten nach drinnen und verwandelten
 unsere Räumlichkeiten in der Rümikerstrasse in eine festliche Atmosphäre. Die Kinder zeigten sich
 besonders begeistert von der veränderten Raumgestaltung und entdeckten neue Spielmöglichkeiten.

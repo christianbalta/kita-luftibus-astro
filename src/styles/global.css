@@ -18,10 +18,38 @@
   --color-background-light-blue: #EFF5F6;
   
   /* Font Families */
-  --font-family-heading: 'Quicksand', sans-serif;
-  --font-family-body: 'Quicksand', sans-serif;
-  --font-family-accent: 'Pangolin', cursive;
+  --font-family-heading: 'Quicksand', 'Quicksand Fallback', sans-serif;
+  --font-family-body: 'Quicksand', 'Quicksand Fallback', sans-serif;
+  --font-family-accent: 'Pangolin', 'Pangolin Fallback', cursive;
+  
+  /* Font metric overrides to prevent layout shifts with font-display: swap */
+  --quicksand-fallback-ascent-override: 93%;
+  --quicksand-fallback-descent-override: 25%;
+  --quicksand-fallback-line-gap-override: 0%;
+  --pangolin-fallback-ascent-override: 105%;
+  --pangolin-fallback-descent-override: 35%;
+  --pangolin-fallback-line-gap-override: 0%;
 }
+
+/* Font metric overrides for fallback fonts */
+@font-face {
+  font-family: 'Quicksand Fallback';
+  src: local('Arial');
+  ascent-override: var(--quicksand-fallback-ascent-override);
+  descent-override: var(--quicksand-fallback-descent-override);
+  line-gap-override: var(--quicksand-fallback-line-gap-override);
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: 'Pangolin Fallback';
+  src: local('Comic Sans MS'), local('Arial');
+  ascent-override: var(--pangolin-fallback-ascent-override);
+  descent-override: var(--pangolin-fallback-descent-override);
+  line-gap-override: var(--pangolin-fallback-line-gap-override);
+  size-adjust: 100%;
+}
+
 
 /* Custom animations */
 @keyframes float {
@@ -35,6 +63,23 @@
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
+}
+
+/* Font Awesome with font-display: swap */
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/webfonts/fa-solid-900.woff2") format("woff2");
 }
 
 /* Custom scrollbar */
