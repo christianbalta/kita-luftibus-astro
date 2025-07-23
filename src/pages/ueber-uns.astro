@@ -8,7 +8,7 @@ import {Image} from 'astro:assets';
 
 import lineShape from '../assets/images/decoration/line-shape.png';
 import heartIcon from '../assets/images/decoration/love.png';
-import kindBeimSpielen from '../assets/images/paedagogisches-konzept/portfolio-konzept/bewegung-im-freien/Kind-klettert-stufen-hoch.jpeg';
+import bewegungsUndSchlafzimmer from '../assets/images/raeumlichkeiten/raeumlichkeiten-Bewegungs-und-Schlafzimmer.jpg';
 import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
 import topShape from '../assets/images/backgrounds/section-top-shape.png';
 
@@ -54,7 +54,7 @@ const keyFacts = [
 ];
 ---
 
-<Layout title="Über uns - KiTa Luftibus Winterthur" description="Erfahren Sie mehr über unsere Kindertagesstätte, unsere Gruppen Fidibus und Wirbelwind, sowie unsere Trägerschaft und pädagogische Philosophie.">
+<Layout title="Über uns - KiTa Luftibus Winterthur" description="Erfahren Sie mehr über unsere Kindertagesstätte in Winterthur, unsere Gruppen Fidibus und Wirbelwind, sowie unsere Trägerschaft.">
   <TopBar />
   <Header />
   <MobileMenu />
@@ -145,11 +145,11 @@ const keyFacts = [
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div class="relative">
             <Image
-              src={kindBeimSpielen}
-              alt="Kinder beim Spielen in der Kita"
+              src={bewegungsUndSchlafzimmer}
+              alt="Bewegungs und Schlafzimmer in der Kita Winterthur"
               class="rounded-2xl shadow-default"
-              width={500}
-              height={667}
+              width={600}
+              height={561}
             />
             <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-10"></div>
           </div>

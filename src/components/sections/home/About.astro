@@ -4,7 +4,7 @@ import {Image} from 'astro:assets';
 
 import bus from '../../../assets/images/decoration/bus.png';
 import girl from '../../../assets/images/decoration/girl.png';
-import kindBeimSpielen from '../../../assets/images/about/kind-beim-spielen.jpeg';
+import atelier from '../../../assets/images/raeumlichkeiten/raeumlichkeiten-Atelier.jpg';
 
 const whyChooseUs = [
   {
@@ -80,9 +80,11 @@ const features = [
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="relative">
         <Image
-            src={kindBeimSpielen}
-            alt="Kind beim Spielen"
-            class="w-full rounded-2xl shadow-default"
+            src={atelier}
+            alt="Atelier in der Kita Winterthur"
+            class="rounded-2xl shadow-default"
+            width={600}
+            height={596}
         />
         <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-primary rounded-full opacity-10"></div>
       </div>

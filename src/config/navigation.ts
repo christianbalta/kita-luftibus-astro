@@ -65,7 +65,7 @@ export const sitemap: SiteMap = {
     },
     weekly_menu_plan: {
       title: "Menü",
-      url: "/wochenmenueplan"
+      url: "/Menueplan-Juli-2025.pdf"
     }
   }
 };

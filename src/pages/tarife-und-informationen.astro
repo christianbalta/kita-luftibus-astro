@@ -9,11 +9,12 @@ import {Image} from 'astro:assets';
 import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
 ---
 
-<Layout title="Tarife und Infos - KiTa Luftibus Winterthur" description="Informationen zu unseren Tarifen für Säuglinge und Kinder sowie zu subventionierten Plätzen in der KiTa Luftibus Winterthur.">
-  <TopBar />
-  <Header />
-  <MobileMenu />
-  
+<Layout title="Kita Kosten & Preise - KiTa Luftibus Winterthur"
+        description="Transparente Kita Kosten bei KiTa Luftibus Winterthur. Erfahren Sie alles über unsere Preise, Tarife für verschiedene Altersgruppen und Möglichkeiten für subventionierte Betreuungsplätze.">
+  <TopBar/>
+  <Header/>
+  <MobileMenu/>
+
   <main>
     <!-- Hero Section -->
     <section class="py-20 lg:py-32 relative overflow-hidden bg-background-cream">
@@ -23,7 +24,8 @@ import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
             Tarife und <span class="text-primary">Infos</span>
           </h1>
           <p class="text-text-gray text-xl max-w-3xl mx-auto leading-relaxed">
-            Hier finden Sie alle Informationen zu unseren Tarifen für Säuglinge und Kinder sowie zu subventionierten Plätzen.
+            Hier finden Sie alle Informationen zu unseren Tarifen für Säuglinge und Kinder sowie zu
+            subventionierten Plätzen.
           </p>
         </div>
       </div>
@@ -50,11 +52,11 @@ import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
             <p class="text-text-gray leading-relaxed mb-4">
               Säuglinge bis 18 Monat CHF. 125.- pro Tag
             </p>
-            
+
             <h4 class="font-heading font-semibold text-xl text-header-dark mb-3">
               Monatspauschale für Säuglinge bis 18 Monate (Geschwisterrabatt 10%)*:
             </h4>
-            
+
             <ul class="list-disc pl-6 mb-6 space-y-2 text-text-gray">
               <li>1 Tag pro Woche CHF 531.25</li>
               <li>2 Tage pro Woche CHF 1062.50</li>
@@ -62,26 +64,31 @@ import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
               <li>4 Tage pro Woche CHF 2125.-</li>
               <li>5 Tage pro Woche CHF 2'656.25</li>
             </ul>
-            
+
             <p class="text-text-gray leading-relaxed mb-4">
-              Gemüse-und Früchtebreie werden frisch in der Kita hergestellt und sind im Betreuungsbetrag enthalten. Beginnt der Säugling mit Mischkost, ist die Verpflegung ebenfalls inklusive (ausgenommen sind Schoppen oder spezielle Kost bei Nahrungsmittelunverträglichkeiten).
+              Gemüse-und Früchtebreie werden frisch in der Kita hergestellt und sind im
+              Betreuungsbetrag enthalten. Beginnt der Säugling mit Mischkost, ist die Verpflegung
+              ebenfalls inklusive (ausgenommen sind Schoppen oder spezielle Kost bei
+              Nahrungsmittelunverträglichkeiten).
             </p>
-            
+
             <p class="text-text-gray leading-relaxed italic">
-              *die Berechnung basiert auf 4.25 Wochentagen pro Monat, siehe Beitragsreglement der Stadt Winterthur.
+              *die Berechnung basiert auf 4.25 Wochentagen pro Monat, siehe Beitragsreglement der
+              Stadt Winterthur.
             </p>
           </div>
 
           <div class="bg-white rounded-2xl p-8 shadow-default mb-12">
-            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Kinder ab 18 Monate</h3>
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Kinder ab 18
+              Monate</h3>
             <p class="text-text-gray leading-relaxed mb-4">
               Kinder ab 18 Monate CHF 113.- pro Tag
             </p>
-            
+
             <h4 class="font-heading font-semibold text-xl text-header-dark mb-3">
               Monatspauschale für Kinder ab 18 Monate (Geschwisterrabatt 10%)*:
             </h4>
-            
+
             <ul class="list-disc pl-6 mb-6 space-y-2 text-text-gray">
               <li>1 Tag pro Woche CHF 480.25</li>
               <li>2 Tage pro Woche CHF 960.-</li>
@@ -89,16 +96,23 @@ import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
               <li>4 Tage pro Woche CHF 1921.-</li>
               <li>5 Tage pro Woche CHF 2401.25</li>
             </ul>
-            
+
             <p class="text-text-gray leading-relaxed italic">
-              *die Berechnung basiert auf 4.25 Wochentagen pro Monat, siehe Beitragsreglement der Stadt Winterthur.
+              *die Berechnung basiert auf 4.25 Wochentagen pro Monat, siehe Beitragsreglement der
+              Stadt Winterthur.
             </p>
           </div>
 
           <div class="bg-white rounded-2xl p-8 shadow-default">
-            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Subventionierte Plätze</h3>
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-4">Subventionierte
+              Plätze</h3>
             <p class="text-text-gray leading-relaxed">
-              Anspruch auf einen subventionierten Platz haben Eltern mit Wohnsitz in der Stadt Winterthur und einem steuerbaren Einkommen von weniger als Fr. 105'001 zuzüglich 10% Vermögen. Eine weitere Bedingung ist ein Arbeitspensum von 120%, d.h., dass beide Elternteile arbeiten müssen. Weitere Informationen zu subventionierten Plätzen finden Sie auf der Website der Stadt Winterthur. Wir informieren Sie auch gerne individuell beim Besuch unserer Kita.
+              Anspruch auf einen subventionierten Platz haben Eltern mit Wohnsitz in der Stadt
+              Winterthur und einem steuerbaren Einkommen von weniger als Fr. 105'001 zuzüglich 10%
+              Vermögen. Eine weitere Bedingung ist ein Arbeitspensum von 120%, d.h., dass beide
+              Elternteile arbeiten müssen. Weitere Informationen zu subventionierten Plätzen finden
+              Sie auf der Website der Stadt Winterthur. Wir informieren Sie auch gerne individuell
+              beim Besuch unserer Kita.
             </p>
           </div>
         </div>
@@ -106,5 +120,5 @@ import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
     </section>
   </main>
 
-  <Footer />
+  <Footer/>
 </Layout>
