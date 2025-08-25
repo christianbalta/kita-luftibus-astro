@@ -1,160 +1,150 @@
 ---
 ---
 
-<div id="free-places-banner" class="banner-container">
-  <div class="banner-content">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col md:flex-row items-center justify-between py-3 md:py-4">
-        <div class="flex items-center space-x-3 mb-2 md:mb-0">
-          <div class="pulse-dot"></div>
-          <span class="text-white font-semibold text-sm md:text-base">
-            🎉 Wir haben freie Plätze verfügbar!
-          </span>
-          <span class="hidden md:inline text-white/90 text-sm">
-            Sichere dir jetzt einen Betreuungsplatz für dein Kind
-          </span>
+<!-- Persistent bottom-right expandable availability card -->
+<div id="free-places-card" class="free-places-card" aria-live="polite">
+  <button id="toggle-free-places" class="toggle-btn" aria-expanded="false" aria-controls="free-places-panel">
+    <span class="dot available" aria-hidden="true"></span>
+    <span class="toggle-label"> Akutelle Plätze</span>
+  </button>
+
+  <div id="free-places-panel" class="panel" role="dialog" aria-label="Freie Plätze">
+    <div class="panel-header">
+      <div class="title">
+        <span class="text">Akutelle Plätze</span>
+      </div>
+      <button id="close-free-places" class="close-btn" aria-label="Schließen">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="panel-content">
+      <div class="group">
+        <div class="row">
+          <span class="dot available" aria-hidden="true"></span>
+          <span class="label">Wirbelwind (3–18 Monate)</span>
         </div>
-        <div class="flex items-center space-x-4">
-          <a
-              href="/verfuegbare-plaetze-und-anmeldung"
-              class="bg-white text-primary px-4 py-2 rounded-full font-semibold text-sm hover:bg-opacity-90 transition-all hover:scale-105 shadow-md"
-          >
-            Jetzt anmelden
-          </a>
-          <button
-              id="close-banner"
-              class="text-white/80 hover:text-white transition-colors"
-              aria-label="Banner schließen"
-          >
-            <i class="fas fa-times text-lg"></i>
-          </button>
+        <div class="row">
+          <span class="dot available" aria-hidden="true"></span>
+          <span class="label">Fidibus (18 Monate – 5 Jahre)</span>
         </div>
       </div>
+
+      <a href="/verfuegbare-plaetze-und-anmeldung" class="cta">Jetzt anmelden</a>
     </div>
   </div>
 </div>
 
 <style>
-  .banner-container {
+  .free-places-card {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    right: 1.5rem; /* 24px */
+    bottom: 1.5rem;
     z-index: 60;
-    transform: translateY(-100%);
-    animation: slideDown 0.5s ease-out 1s forwards;
   }
-
-  .banner-content {
-    background: linear-gradient(135deg, #F39F5F 0%, #E58A44 100%);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    position: relative;
-    overflow: hidden;
+  .toggle-btn {
+    min-height: 3rem; /* ~48px */
+    padding: 0 0.875rem;
+    border-radius: 9999px;
+    background: var(--color-primary, #F39F5F);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    transition: transform .15s ease, box-shadow .15s ease;
+    border: none;
+    cursor: pointer;
   }
+  .toggle-label { color: #fff; font-weight: 600; font-size: 0.95rem; }
+  .toggle-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 20px -3px rgba(0,0,0,0.12), 0 6px 10px -2px rgba(0,0,0,0.06); }
 
-  .banner-content::before {
-    content: '';
+  .panel {
     position: absolute;
-    top: 0;
-    left: -100%;
+    right: 0;
+    bottom: 4.25rem; /* sits above the toggle */
+    width: 20rem; /* 320px */
+    max-width: calc(100vw - 2rem);
+    background: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0,0,0,0.06);
+    overflow: hidden;
+    transform-origin: bottom right;
+    transform: scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease, transform .18s ease;
+  }
+  .panel.open { opacity: 1; transform: scale(1); pointer-events: auto; }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    background: linear-gradient(135deg, #F39F5F 0%, #E58A44 100%);
+    color: #fff;
+  }
+  .panel-header .title { display: flex; align-items: center; gap: .5rem; font-weight: 600; }
+  .close-btn { background: transparent; border: none; color: #fff; cursor: pointer; padding: .25rem; }
+
+  .panel-content { padding: 0.75rem; }
+  .group { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 0.75rem; }
+  .row { display: flex; align-items: center; gap: .5rem; justify-content: space-between; }
+  .row .label { flex: 1; color: #334155; }
+  .row .status { color: #16a34a; font-weight: 600; }
+
+  .dot { width: 10px; height: 10px; border-radius: 9999px; display: inline-block; }
+  .dot.available { background-color: #22c55e; box-shadow: 0 0 0 0 rgba(34,197,94,.7); animation: pulse 2s infinite; }
+
+  .cta {
+    display: inline-block;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    animation: shimmer 3s infinite;
+    text-align: center;
+    background: var(--color-primary, #F39F5F);
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: filter .15s ease;
   }
-
-  .pulse-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #4ade80;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
-  }
-
-  @keyframes slideDown {
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes shimmer {
-    to {
-      left: 100%;
-    }
-  }
+  .cta:hover { filter: brightness(.95); }
 
   @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(34,197,94,.7); }
+    70% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+    100% { box-shadow: 0 0 0 0 rgba(34,197,94,0); }
   }
 
-  .banner-container.hiding {
-    animation: slideUp 0.3s ease-in forwards;
-  }
-
-  @keyframes slideUp {
-    to {
-      transform: translateY(-100%);
-    }
-  }
-
-  /* Adjust the rest of the page when banner is visible */
-  .banner-container:not(.hiding) ~ * {
-    margin-top: 60px;
-    transition: margin-top 0.3s ease-out;
-  }
-
-  @media (max-width: 768px) {
-    .banner-container:not(.hiding) ~ * {
-      margin-top: 80px;
-    }
+  @media (max-width: 640px) {
+    .free-places-card { right: 1rem; bottom: 1rem; }
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const banner = document.getElementById('free-places-banner');
-    const closeBtn = document.getElementById('close-banner');
-    const header = document.querySelector('header');
+    const toggle = document.getElementById('toggle-free-places');
+    const panel = document.getElementById('free-places-panel');
+    const close = document.getElementById('close-free-places');
 
-    // Check if user has already closed the banner in this session
-    const bannerClosed = sessionStorage.getItem('freePlacesBannerClosed');
+    const open = () => {
+      panel?.classList.add('open');
+      toggle?.setAttribute('aria-expanded', 'true');
+    };
+    const closePanel = () => {
+      panel?.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    };
 
-    if (bannerClosed) {
-      banner?.style.setProperty('display', 'none');
-    } else {
-      // Adjust header position when banner appears
-      setTimeout(() => {
-        if (header && banner) {
-          header.style.marginTop = '60px';
-          header.style.transition = 'margin-top 0.5s ease-out';
-        }
-      }, 1000);
-    }
-
-    closeBtn?.addEventListener('click', () => {
-      banner?.classList.add('hiding');
-
-      // Reset header position
-      if (header) {
-        header.style.marginTop = '0';
+    toggle?.addEventListener('click', () => {
+      if (panel?.classList.contains('open')) {
+        closePanel();
+      } else {
+        open();
       }
-
-      // Store in session storage
-      sessionStorage.setItem('freePlacesBannerClosed', 'true');
-
-      // Remove banner from DOM after animation
-      setTimeout(() => {
-        banner?.style.setProperty('display', 'none');
-      }, 300);
     });
+    close?.addEventListener('click', closePanel);
   });
 </script>

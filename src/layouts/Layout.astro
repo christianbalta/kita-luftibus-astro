@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import FreePlacesBanner from '../components/sections/home/FreePlacesBanner.astro'
 
 export interface Props {
   title: string;
@@ -50,13 +51,8 @@ const {
 <body class="font-family-body">
 <slot/>
 
-<!-- Floating phone button -->
-<a href="tel:+41522231324" aria-label="Rufen Sie uns an">
-  <div
-      class="fixed bottom-8 right-8 w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer z-40">
-    <i class="fas fa-phone text-white text-xl"></i>
-  </div>
-</a>
+<!-- Persistent availability card (replaces floating phone button) -->
+<FreePlacesBanner />
 
 <script>
   // Smooth scrolling for anchor links
