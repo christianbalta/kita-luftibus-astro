@@ -1,0 +1,160 @@
+---
+---
+
+<div id="free-places-banner" class="banner-container">
+  <div class="banner-content">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-between py-3 md:py-4">
+        <div class="flex items-center space-x-3 mb-2 md:mb-0">
+          <div class="pulse-dot"></div>
+          <span class="text-white font-semibold text-sm md:text-base">
+            🎉 Wir haben freie Plätze verfügbar!
+          </span>
+          <span class="hidden md:inline text-white/90 text-sm">
+            Sichere dir jetzt einen Betreuungsplatz für dein Kind
+          </span>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a
+              href="/verfuegbare-plaetze-und-anmeldung"
+              class="bg-white text-primary px-4 py-2 rounded-full font-semibold text-sm hover:bg-opacity-90 transition-all hover:scale-105 shadow-md"
+          >
+            Jetzt anmelden
+          </a>
+          <button
+              id="close-banner"
+              class="text-white/80 hover:text-white transition-colors"
+              aria-label="Banner schließen"
+          >
+            <i class="fas fa-times text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .banner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    transform: translateY(-100%);
+    animation: slideDown 0.5s ease-out 1s forwards;
+  }
+
+  .banner-content {
+    background: linear-gradient(135deg, #F39F5F 0%, #E58A44 100%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .banner-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  }
+
+  @keyframes slideDown {
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    to {
+      left: 100%;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(74, 222, 128, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0);
+    }
+  }
+
+  .banner-container.hiding {
+    animation: slideUp 0.3s ease-in forwards;
+  }
+
+  @keyframes slideUp {
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* Adjust the rest of the page when banner is visible */
+  .banner-container:not(.hiding) ~ * {
+    margin-top: 60px;
+    transition: margin-top 0.3s ease-out;
+  }
+
+  @media (max-width: 768px) {
+    .banner-container:not(.hiding) ~ * {
+      margin-top: 80px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('free-places-banner');
+    const closeBtn = document.getElementById('close-banner');
+    const header = document.querySelector('header');
+
+    // Check if user has already closed the banner in this session
+    const bannerClosed = sessionStorage.getItem('freePlacesBannerClosed');
+
+    if (bannerClosed) {
+      banner?.style.setProperty('display', 'none');
+    } else {
+      // Adjust header position when banner appears
+      setTimeout(() => {
+        if (header && banner) {
+          header.style.marginTop = '60px';
+          header.style.transition = 'margin-top 0.5s ease-out';
+        }
+      }, 1000);
+    }
+
+    closeBtn?.addEventListener('click', () => {
+      banner?.classList.add('hiding');
+
+      // Reset header position
+      if (header) {
+        header.style.marginTop = '0';
+      }
+
+      // Store in session storage
+      sessionStorage.setItem('freePlacesBannerClosed', 'true');
+
+      // Remove banner from DOM after animation
+      setTimeout(() => {
+        banner?.style.setProperty('display', 'none');
+      }, 300);
+    });
+  });
+</script>
