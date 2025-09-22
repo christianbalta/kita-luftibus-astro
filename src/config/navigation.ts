@@ -63,6 +63,10 @@ export const sitemap: SiteMap = {
       title: "Verfügbare Plätze & Anmeldung",
       url: "/verfuegbare-plaetze-und-anmeldung",
     },
+    events: {
+      title: "Events",
+      url: "/events"
+    },
     weekly_menu_plan: {
       title: "Menü",
       url: "/Menueplan-September-2025.pdf"
