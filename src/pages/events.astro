@@ -11,8 +11,6 @@ import bottomShape from '../assets/images/backgrounds/bottom-shape.png';
 import lineShape from '../assets/images/decoration/line-shape.png';
 import heartIcon from '../assets/images/decoration/love.png';
 
-// Events based on the provided screenshot
-// Note: Wording and times follow the image exactly
 const events = [
   {
     weekday: 'SA',
@@ -31,7 +29,7 @@ const events = [
   {
     weekday: 'MO',
     day: '8.',
-    month: 'Nov',
+    month: 'Dez',
     title: 'Samichlaus Anlass',
     time: 'Ab 18:00'
   },
@@ -89,8 +87,11 @@ const events = [
                 <div class="flex-1">
                   <div class="font-heading font-semibold text-xl text-header-dark">{e.title}</div>
                 </div>
-                <div class="ml-4">
+                <div class="ml-4 flex items-center gap-2">
                   <span class="inline-block bg-indigo-100 text-indigo-700 text-sm font-semibold px-3 py-1 rounded-full">{e.time}</span>
+                  <a href="#event-anmeldung" data-event={`${e.day} ${e.month} – ${e.title} (${e.time})`} class="inline-flex items-center bg-primary text-white text-sm font-semibold px-3 py-2 rounded-lg shadow hover:bg-primary/90 transition" aria-label={`${e.day} ${e.month} – ${e.title} (${e.time}) jetzt anmelden`}>
+                    Jetzt anmelden
+                  </a>
                 </div>
               </div>
             </div>
@@ -98,7 +99,67 @@ const events = [
         </div>
       </div>
     </section>
+
+    <!-- Event-Anmeldung Form -->
+    <section id="event-anmeldung" class="bg-background-light relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="bg-white rounded-2xl p-8 shadow-default">
+            <h3 class="font-heading font-semibold text-2xl text-header-dark mb-6">Anmeldung für Events</h3>
+            <p class="text-text-gray leading-relaxed mb-8">
+              Melden Sie sich unverbindlich für einen unserer Events an. Wir kontaktieren Sie nach Eingang Ihrer Anmeldung.
+            </p>
+
+            <form method="post" action="/events">
+              <div class="bg-background-cream p-4 rounded-lg mb-6">
+                <h4 class="font-heading font-semibold text-lg text-header-dark mb-4">Ihre Angaben</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div class="form-group">
+                    <label for="name" class="block text-text-gray font-medium mb-2">Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="vorname" class="block text-text-gray font-medium mb-2">Vorname <span class="text-red-500">*</span></label>
+                    <input type="text" id="vorname" name="vorname" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="telefon" class="block text-text-gray font-medium mb-2">Telefon <span class="text-red-500">*</span></label>
+                    <input type="tel" id="telefon" name="telefon" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email" class="block text-text-gray font-medium mb-2">E-Mail-Adresse <span class="text-red-500">*</span></label>
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition" />
+                  </div>
+
+                  <div class="form-group md:col-span-2">
+                    <label for="event" class="block text-text-gray font-medium mb-2">Event auswählen <span class="text-red-500">*</span></label>
+                    <select id="event" name="event" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 transition">
+                      <option value="">Bitte auswählen</option>
+                      {events.map((e) => (
+                        <option value={`${e.day} ${e.month} – ${e.title} (${e.time})`}>{`${e.day} ${e.month} – ${e.title} (${e.time})`}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <button type="submit" class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-lg shadow hover:bg-primary/90 transition">
+                  Jetzt anmelden
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <script>
+    import '../scripts/event-registration-form.ts';
+  </script>
   <Footer />
 </Layout>
