@@ -69,7 +69,7 @@ export const sitemap: SiteMap = {
     },
     weekly_menu_plan: {
       title: "Menü",
-      url: "/Menueplan-September-2025.pdf"
+      url: "/Menueplan_Oktober_2025.pdf"
     }
   }
 };
